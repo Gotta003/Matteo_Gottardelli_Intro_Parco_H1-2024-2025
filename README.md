@@ -66,6 +66,11 @@ NUMA node1 CPU(s):     24-47
 NUMA node2 CPU(s):     48-71
 NUMA node3 CPU(s):     72-95
 ```
+You can see these information on a Linux system using:
+```bash
+lscpu
+```
 - **Native Machine**:<br>
-This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)
+This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)<br><br>
+Some operations with Moba aren't necessary to use the instructions in this readMe, like transfering files from and to the cluster.<br>
 
