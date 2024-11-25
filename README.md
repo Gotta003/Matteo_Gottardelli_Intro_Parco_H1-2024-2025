@@ -74,3 +74,30 @@ lscpu
 This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)<br><br>
 Some operations with Moba aren't necessary to use the instructions in this readMe, like transfering files from and to the cluster.<br>
 
+# Installation and Configuration
+
+## Global Protect
+
+## Clone Git
+
+## Cluster 
+
+### Access Cluster
+
+### Import Project
+
+### Import Libraries
+
+### Run Project
+
+### Download Results
+
+# Project Layout
+
+# Code Overview
+
+## Main
+
+## Functions
+
+# Contact
