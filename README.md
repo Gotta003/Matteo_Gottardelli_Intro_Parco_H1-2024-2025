@@ -110,19 +110,59 @@ brew will be updated and that command will be integrated in your terminal. So, i
 4. Insert your passkey and after that you will see on your terminal as last line "Logged in as <Your ID on GitHub><br>
 5. Now run this command to clone the above repository:
 ```bash
-gh repo clone Gotta003/Intro_ParcoH1-2024-2025
+gh repo clone Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025
 ```
 6. To see, if you have successfully clone the repository try to access to it, running:
 ```bash
-cd Intro_ParcoH1-2024-2025
-```  
+cd Matteo_Gottardelli_Intro_Parco_H1-2024-2025
+```
+Now, your are in the folder.
 3. 
 ## Cluster 
-
 ### Access Cluster
-
+1. Now leaving the previous terminal window of the cloned repository, but it has to still be open, open a new terminal window
+2. Run the command to access to the cluster (be careful that the VPN is active:
+```bash
+ssh <username>@hpc.unitn.it
+```
+If you have another cluster change the obvious parameters.
+3. Insert the required password
+4. In the University of Trento, I you are inside the cluster you will see your username@<one of two node in the cluster (n1 and n2)>
 ### Import Project
-
+All the required codes that have to be run are in the "Matrix Transposition" folder, so we have to transfer that folder on the cluster. Now you should have two terminal windows, one in the cloned repository and another connected to the cluster. If so, follow these steps:
+1. Run this command in the cloned repository terminal:
+```bash
+cd Matrix\ Transposition
+pwd
+```
+If not present or gives error, install with (if on MacOS or Linux):
+```bash
+brew install pwd
+```
+2. Make an alias, copy this instruction, but substitute with <Path From pwd> the path outputed previously
+```bash
+alias local_path='<Path From pwd>'
+```
+If that doesn't work, maybe the '' are indexed different, so change them manually
+3. Create another alias with your email of the cluster you have logined with, if you are part of Unitn Cluster it is like:
+```bash
+alias cluster_mail='<username>@hpc.unitn.it'
+```
+4. Knowing that you would like to load all files in a specific directory, save in an alias the destination path of this folder, with you what it to be in the position you are on the cluster terminal, you can run this (ON CLUSTER):
+```bash
+mkdir Matrix_Transposition_Matteo_Gottardelli
+cd Matrix_Transposition_Matteo_Gottardelli
+pwd
+```
+5. Copy this path and create on the other terminal running this:
+```bash
+alias cluster_path='<Path Destination>'
+```
+6. Now, if you have correctly set the alias, you can directly run this command, in the native terminal (NOT THE CLUSTER ONE):
+```bash
+scp -r $local_path $cluster_mail:$cluster_path
+```
+8. 
 ### Import Libraries
 
 ### Run Project
