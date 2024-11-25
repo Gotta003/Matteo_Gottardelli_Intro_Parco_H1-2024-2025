@@ -77,7 +77,8 @@ Some operations with Moba aren't necessary to use the instructions in this readM
 # Installation and Configuration
 
 ## Global Protect
-
+If you would like to connect to a cluster, the connection has to be protected by a VPN coonection, so to install and setup a secure connection to setup the cluster:
+1. Download Global Protect according to version of your architecture: [Global Protect](https://vpn-esterni.icts.unitn.it/global-protect/getsoftwarepage.esp)
 ## Clone Git
 
 ## Cluster 
