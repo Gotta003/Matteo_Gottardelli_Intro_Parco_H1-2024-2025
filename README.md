@@ -40,32 +40,32 @@ This is a project done by Matteo Gottardelli which is the owner and responsible 
 All the simulations you can find in the results folder have been done on a cluster offered by the University of Trento. These were all done in a node that had a minimum of 64 cpus for standard purposes and for OpenMP and for safe I reserved 1 Gb of memory, which is x4 the memory needed for the maximum size.<br>
 There are the following properties of the node on which I ran the simulations:<br>
 ```bash
-Architecture:          x86_64<br>
-CPU op-mode(s):        32-bit, 64-bit<br>
-Byte Order:            Little Endian<br>
-CPU(s):                96<br>
-On-line CPU(s) list:   0-95<br>
-Thread(s) per core:    1<br>
-Core(s) per socket:    24<br>
-Socket(s):             4<br>
-NUMA node(s):          4<br>
-Vendor ID:             GenuineIntel<br>
-CPU family:            6<br>
-Model:                 85<br>
-Model name:            Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz<br>
-Stepping:              7<br>
-CPU MHz:               2300.000<br>
-BogoMIPS:              4600.00<br>
-Virtualization:        VT-x<br>
-L1d cache:             32K<br>
-L1i cache:             32K<br>
-L2 cache:              1024K<br>
-L3 cache:              36608K<br>
-NUMA node0 CPU(s):     0-23<br>
-NUMA node1 CPU(s):     24-47<br>
-NUMA node2 CPU(s):     48-71<br>
-NUMA node3 CPU(s):     72-95<br>
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                96
+On-line CPU(s) list:   0-95
+Thread(s) per core:    1
+Core(s) per socket:    24
+Socket(s):             4
+NUMA node(s):          4
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz
+Stepping:              7
+CPU MHz:               2300.000
+BogoMIPS:              4600.00
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              36608K
+NUMA node0 CPU(s):     0-23
+NUMA node1 CPU(s):     24-47
+NUMA node2 CPU(s):     48-71
+NUMA node3 CPU(s):     72-95
 ```
 - **Native Machine**:<br>
-This project was developed with a MacOS machine, the simulation wasn't done on this machine, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here:<li>https://mobaxterm.mobatek.net/download.html<li>
+This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)
 
