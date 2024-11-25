@@ -36,5 +36,8 @@ The combionation of these 4 generated these explored ways:<br><br>
 This is a project done by Matteo Gottardelli which is the owner and responsible of any element in this repository.<br>
 
 # Software and/or Cluster Requirements
-
+- **Cluster**:<br>
+All the simulations you can find in the results folder have been done on a cluster offered by the University of Trento. These were all done in a node that had a minimum of 64 cpus for standard purposes and for OpenMP and for safe I reserved 1 Gb of memory, which is x4 the memory needed for the maximum size.<br>
+- **Native Machine**:<br>
+This project was developed with a MacOS machine, the simulation wasn't done on this machine, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here:<li>https://mobaxterm.mobatek.net/download.html<li>
 
