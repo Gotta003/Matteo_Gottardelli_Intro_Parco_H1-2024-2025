@@ -39,6 +39,7 @@ This is a project done by Matteo Gottardelli which is the owner and responsible 
 - **Cluster**:<br>
 All the simulations you can find in the results folder have been done on a cluster offered by the University of Trento. These were all done in a node that had a minimum of 64 cpus for standard purposes and for OpenMP and for safe I reserved 1 Gb of memory, which is x4 the memory needed for the maximum size.<br>
 There are the following properties of the node on which I ran the simulations:<br>
+...
 Architecture:          x86_64<br>
 CPU op-mode(s):        32-bit, 64-bit<br>
 Byte Order:            Little Endian<br>
@@ -63,7 +64,8 @@ L3 cache:              36608K<br>
 NUMA node0 CPU(s):     0-23<br>
 NUMA node1 CPU(s):     24-47<br>
 NUMA node2 CPU(s):     48-71<br>
-NUMA node3 CPU(s):     72-95<br><br>
+NUMA node3 CPU(s):     72-95<br>
+...
 - **Native Machine**:<br>
 This project was developed with a MacOS machine, the simulation wasn't done on this machine, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here:<li>https://mobaxterm.mobatek.net/download.html<li>
 
