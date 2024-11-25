@@ -86,7 +86,20 @@ If you would like to connect to a cluster, the connection has to be protected by
 ```
 4. Pressing connect you will be redirect to an external login page and putting the credentials the connection will be set
 ## Clone Git
-
+1. Clone the Git Hub page, running the command below in the terminal on your computer:
+```bash
+gh repo clone Gotta003/Intro_ParcoH1-2024-2025
+```
+If it doesn't work you may have to download some extra dependencies, like gh.
+If you are on MacOS or Linux you can install homebrew. To verify if homebrew is already install run on terminal:
+```bash
+brew --version
+```
+If that doesn't put out Homebrew and the version, it does mean you haven't installed it, yet. So, to install it run:
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+3. 
 ## Cluster 
 
 ### Access Cluster
