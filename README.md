@@ -86,9 +86,9 @@ If you would like to connect to a cluster, the connection has to be protected by
 ```
 4. Pressing connect you will be redirect to an external login page and putting the credentials the connection will be set
 ## Clone Git
-1. Clone the Git Hub page, running the command below in the terminal on your computer:
+1. Access to your GitHub account, running the command below in the terminal on your computer:
 ```bash
-gh repo clone Gotta003/Intro_ParcoH1-2024-2025
+gh auth login
 ```
 If it doesn't work you may have to download some extra dependencies, like gh.
 If you are on MacOS or Linux you can install homebrew. To verify if homebrew is already install run on terminal:
@@ -99,6 +99,23 @@ If that doesn't put out Homebrew and the version, it does mean you haven't insta
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+Now, doing:
+```bash
+brew install <missing command>
+```
+brew will be updated and that command will be integrated in your terminal. So, install with this method gh<br><br>
+
+2. After the command run successfully, you will have to do some choices. Select Github.com then HTTPS, type Y and press Login with a web browser and then press enter. You can use any other type of method, but I'm going to explain it how I have done it<br>
+3. In the new open panel, insert the credentials and the one-time code generated on terminal and authorize the connection
+4. Insert your passkey and after that you will see on your terminal as last line "Logged in as <Your ID on GitHub><br>
+5. Now run this command to clone the above repository:
+```bash
+gh repo clone Gotta003/Intro_ParcoH1-2024-2025
+```
+6. To see, if you have successfully clone the repository try to access to it, running:
+```bash
+cd Intro_ParcoH1-2024-2025
+```  
 3. 
 ## Cluster 
 
