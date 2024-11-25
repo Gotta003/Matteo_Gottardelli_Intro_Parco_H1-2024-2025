@@ -77,8 +77,14 @@ Some operations with Moba aren't necessary to use the instructions in this readM
 # Installation and Configuration
 
 ## Global Protect
-If you would like to connect to a cluster, the connection has to be protected by a VPN coonection, so to install and setup a secure connection to setup the cluster:
-1. Download Global Protect according to version of your architecture: [Global Protect](https://vpn-esterni.icts.unitn.it/global-protect/getsoftwarepage.esp)
+If you would like to connect to a cluster, the connection has to be protected by a VPN coonection, so to install and setup a secure connection to setup the cluster:<br>
+1. Download Global Protect according to version of your architecture: [Global Protect](https://vpn-esterni.icts.unitn.it/global-protect/getsoftwarepage.esp)<br>
+2. Open Global Protect App<br>
+3. Connection to a vpn portal. If you are part of the Unitn University, you can set the Portal to:
+```bash
+   vpn-mfa.icts.unitn.it
+```
+4. Pressing connect you will be redirect to an external login page and putting the credentials the connection will be set
 ## Clone Git
 
 ## Cluster 
