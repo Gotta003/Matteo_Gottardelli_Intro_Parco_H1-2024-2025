@@ -133,7 +133,7 @@ If you have another cluster change the obvious parameters.
 All the required codes that have to be run are in the "Matrix Transposition" folder, so we have to transfer that folder on the cluster. Now you should have two terminal windows, one in the cloned repository and another connected to the cluster. If so, follow these steps:
 1. Run this command in the cloned repository terminal:
 ```bash
-cd Matrix\ Transposition
+cd Matrix_Transposition
 pwd
 ```
 If not present or gives error, install with (if on MacOS or Linux):
