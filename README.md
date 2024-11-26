@@ -288,7 +288,8 @@ Being csv files, I've computed the results and the graphs on excel, importing th
 # Code Overview
 ## Main
 • **Input Parameters**: The code takes as for input 6 parameters:<br>
-1. Compiler Code - To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier, these are the flags used in my tests:
+1. Compiler Code and modes - To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier, these are the flags used in my tests, each mode is identified with an integer:
+
 <table>
         <tr>
             <th>Mode</th>
@@ -310,7 +311,7 @@ Being csv files, I've computed the results and the graphs on excel, importing th
             <td>I2*</td>
         	  <td>Block Implicit Parallelism with optimization 2 and flags summary</td>
         </tr>
-  <tr>
+        <tr>
         	  <td>3</td>
             <td>R2</td>
         	  <td>Recursive Implicit Parallelism with optimization 2</td>
@@ -320,13 +321,27 @@ Being csv files, I've computed the results and the graphs on excel, importing th
             <td>R2*</td>
         	  <td>Recursive Implicit Parallelism with optimization 2 and flags summary</td>
         </tr>
+        <tr>
+        	  <td>4</td>
+            <td>OMPLOCWS</td>
+        	  <td>Explicit Parallelized Code with OMP with a work-sharing technique for transposition and checking with interruption of the cycle</td>
+        </tr>
+        <tr>
+        	  <td>5</td>
+            <td>OMPGLBWS</td>
+        	  <td>Explicit Parallelized Code with OMP with a work-sharing technique for transposition and checking with NO interruption of the cycle</td>
+        </tr>
+        <tr>
+        	  <td>6</td>
+            <td>OMPLOCBB</td>
+        	  <td>Explicit Parallelized Code with OMP with a block-based technique for transposition and checking with interruption of the cycle</td>
+        </tr>
+        <tr>
+        	  <td>7</td>
+            <td>OMPGLBBB</td>
+        	  <td>Explicit Parallelized Code with OMP with a block-based technique for transposition and checking with NO interruption of the cycle</td>
+        </tr>
 </table>
-  
-3.
-4.
-5.
-6.
-7.
 
 ## Functions
 
