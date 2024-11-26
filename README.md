@@ -287,7 +287,46 @@ scp -r cluster_mail:cluster_path dest_path
 Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.
 # Code Overview
 ## Main
-• **Input Parameters**: The code takes as input 6 parameters:
+• **Input Parameters**: The code takes as for input 6 parameters:<br>
+1. Compiler Code - To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier, these are the flags used in my tests:
+<table>
+        <tr>
+            <th>Mode</th>
+            <th>Compiler Code</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+        	  <td>1</td>
+            <td>SO0</td>
+        	  <td>Sequential Code, with no optimization</td>
+        </tr>
+        <tr>
+        	  <td>2</td>
+            <td>I2</td>
+        	  <td>Block Implicit Parallelism with optimization 2</td>
+        </tr>
+        <tr>
+        	  <td>2</td>
+            <td>I2*</td>
+        	  <td>Block Implicit Parallelism with optimization 2 and flags summary</td>
+        </tr>
+  <tr>
+        	  <td>3</td>
+            <td>R2</td>
+        	  <td>Recursive Implicit Parallelism with optimization 2</td>
+        </tr>
+        <tr>
+        	  <td>3</td>
+            <td>R2*</td>
+        	  <td>Recursive Implicit Parallelism with optimization 2 and flags summary</td>
+        </tr>
+</table>
+  
+3.
+4.
+5.
+6.
+7.
 
 ## Functions
 
