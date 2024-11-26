@@ -284,8 +284,7 @@ Matteo Gottardelli Project
  ┃ ┣ results				# Folder with all .csv files
  ┃ ┗ analysis.xlsx 	# File excel summarizing the collected data
  ┣ Matteo_Gottardelli_237749_Report.pdf # Report
- ┣ Latex source     # Folder with Original files from which the pdf was generated
- ┗
+ ┗ Latex source     # Folder with Original files from which the pdf was generated
 ```
 # Code Overview
 
