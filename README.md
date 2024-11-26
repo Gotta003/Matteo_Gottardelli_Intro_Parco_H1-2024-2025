@@ -151,8 +151,6 @@ cluster_mail='<username>@hpc.unitn.it'
 ```
 4. Knowing that you would like to load all files in a specific directory, save in an alias the destination path of this folder, with you what it to be in the position you are on the cluster terminal, you can run this (ON CLUSTER):
 ```bash
-mkdir Matrix_Transposition_Matteo_Gottardelli
-cd Matrix_Transposition_Matteo_Gottardelli
 pwd
 ```
 5. Copy this path and create on the other terminal running this:
