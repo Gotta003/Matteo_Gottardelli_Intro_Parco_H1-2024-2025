@@ -292,53 +292,53 @@ Being csv files, I've computed the results and the graphs on excel, importing th
 
 <table>
         <tr>
-            <th>Mode</th>
             <th>Compiler Code</th>
+            <th>Mode</th>
             <th>Description</th>
         </tr>
         <tr>
-        	  <td>1</td>
             <td>SO0</td>
+        	  <td>1</td>
         	  <td>Sequential Code, with no optimization</td>
         </tr>
         <tr>
-        	  <td>2</td>
             <td>I2</td>
+        	  <td>2</td>
         	  <td>Block Implicit Parallelism with optimization 2</td>
         </tr>
         <tr>
-        	  <td>2</td>
-            <td>I2*</td>
+        	  <td>I2*</td>  
+            <td>2</td>  
         	  <td>Block Implicit Parallelism with optimization 2 and flags summary</td>
         </tr>
         <tr>
-        	  <td>3</td>
-            <td>R2</td>
+          	<td>R2</td>  
+            <td>3</td>
         	  <td>Recursive Implicit Parallelism with optimization 2</td>
         </tr>
         <tr>
-        	  <td>3</td>
             <td>R2*</td>
+        	  <td>3</td>
         	  <td>Recursive Implicit Parallelism with optimization 2 and flags summary</td>
         </tr>
         <tr>
-        	  <td>4</td>
             <td>OMPLOCWS</td>
+        	  <td>4</td> 
         	  <td>Explicit Parallelized Code with OMP with a work-sharing technique for transposition and checking with interruption of the cycle</td>
         </tr>
         <tr>
-        	  <td>5</td>
             <td>OMPGLBWS</td>
+        	  <td>5</td>
         	  <td>Explicit Parallelized Code with OMP with a work-sharing technique for transposition and checking with NO interruption of the cycle</td>
         </tr>
         <tr>
+             <td>OMPLOCBB</td>
         	  <td>6</td>
-            <td>OMPLOCBB</td>
         	  <td>Explicit Parallelized Code with OMP with a block-based technique for transposition and checking with interruption of the cycle</td>
         </tr>
         <tr>
+           <td>OMPGLBBB</td>
         	  <td>7</td>
-            <td>OMPGLBBB</td>
         	  <td>Explicit Parallelized Code with OMP with a block-based technique for transposition and checking with NO interruption of the cycle</td>
         </tr>
 </table>
