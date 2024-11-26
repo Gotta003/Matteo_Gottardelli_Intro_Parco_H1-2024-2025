@@ -286,9 +286,8 @@ scp -r cluster_mail:cluster_path dest_path
 ```
 Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.
 # Code Overview
-
 ## Main
-
+• **Input Parameters**: The code takes as input 
 ## Functions
 
 # Contact
