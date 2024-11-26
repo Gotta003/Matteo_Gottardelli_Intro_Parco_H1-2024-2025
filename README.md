@@ -161,7 +161,17 @@ cluster_path='<Path Destination>'
 ```bash
 scp -r $local_path $cluster_mail:$cluster_path
 ```
-8. 
+After this you will required to insert the password to access to your cluster account and after that then running this you will see the three files:
+```bash
+cd Matrix_Transposition
+ls
+```
+With you have any problem with scp, try to install it with brew or verify the content of the three variables running:
+```bash
+echo $local_path
+echo $cluster_mail
+echo $cluster_path
+```
 ### Import Libraries
 
 ### Run Project
