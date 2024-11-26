@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Project Layout](#project-layout)
 - [Software and Cluster Requirements](#software-and-cluster-requirements)
 - [Installation and Configuration](#installation-and-configuration)
   - [Global Protect](#global-protect)
@@ -12,7 +13,6 @@
     - [Import Libraries](#import-libraries)
     - [Run Project](#run-project)
     - [Download Results](#download-results)
-- [Project Layout](#project-layout)
 - [Code Overview](#code-overview)
   - [Main](#main)
   - [Functions](#functions)
@@ -34,7 +34,21 @@ The combionation of these 4 generated these explored ways:<br><br>
 (6) **Local Block-Based**<br>
 (7) **Global Block-Based**<br><br>
 This is a project done by Matteo Gottardelli which is the owner and responsible of any element in this repository.<br>
-
+# Project Layout
+```
+Matteo Gottardelli Project
+ ┣ Matrix Transposition 				# Project files folder
+ ┃ ┣ main.c 			 # Main Script with essential code
+ ┃ ┣ functions.h 	 # Headers of file functions.c
+ ┃ ┗ functions.c   # Definitions in functions.h
+ ┣ All Simulations # All past simulations, data and file Excel
+ ┃ ┗ ...
+ ┣ Definitive Simulation	# Simulation to take as reference for report and the project
+ ┃ ┣ results				# Folder with all .csv files
+ ┃ ┗ analysis.xlsx 	# File excel summarizing the collected data
+ ┣ Matteo_Gottardelli_237749_Report.pdf # Report
+ ┗ Latex source     # Folder with Original files from which the pdf was generated
+```
 # Software and Cluster Requirements
 - **Cluster**:<br>
 All the simulations you can find in the results folder have been done on a cluster offered by the University of Trento. These were all done in a node that had a minimum of 64 cpus for standard purposes and for OpenMP and for safe I reserved 1 Gb of memory, which is x4 the memory needed for the maximum size.<br>
@@ -271,21 +285,6 @@ And then run the following command (if a file remove -r, the example is a folder
 scp -r cluster_mail:cluster_path dest_path
 ```
 Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.
-# Project Layout
-```
-Matteo Gottardelli Project
- ┣ Matrix Transposition 				# Project files folder
- ┃ ┣ main.c 			 # Main Script with essential code
- ┃ ┣ functions.h 	 # Headers of file functions.c
- ┃ ┗ functions.c   # Definitions in functions.h
- ┣ All Simulations # All past simulations, data and file Excel
- ┃ ┗ ...
- ┣ Definitive Simulation	# Simulation to take as reference for report and the project
- ┃ ┣ results				# Folder with all .csv files
- ┃ ┗ analysis.xlsx 	# File excel summarizing the collected data
- ┣ Matteo_Gottardelli_237749_Report.pdf # Report
- ┗ Latex source     # Folder with Original files from which the pdf was generated
-```
 # Code Overview
 
 ## Main
