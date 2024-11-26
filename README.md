@@ -262,9 +262,31 @@ The last two flags are always mandatory due to my C code, because to calculate t
 ```
 Jump to [Code Overview](#code-overview)), to see a detailed description of each parameter.<br>
 ### Download Results
-
+If you want to transfer a file or a folder from cluster to your local machine, you have to perform the previous scp command in reverse. So, create a variable for the destination location:
+```bash
+dest_path=<dest_path>
+```
+And then run the following command (if a file remove -r, the example is a folder using the previous data):
+```bash
+scp -r cluster_mail:cluster_path dest_path
+```
+Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.
 # Project Layout
-
+```
+Matteo Gottardelli Project
+ ┣ Matrix Transposition 				# Project files folder
+ ┃ ┣ main.c 			 # Main Script with essential code
+ ┃ ┣ functions.h 	 # Headers of file functions.c
+ ┃ ┗ functions.c   # Definitions in functions.h
+ ┣ All Simulations # All past simulations, data and file Excel
+ ┃ ┗ ...
+ ┣ Definitive Simulation	# Simulation to take as reference for report and the project
+ ┃ ┣ results				# Folder with all .csv files
+ ┃ ┗ analysis.xlsx 	# File excel summarizing the collected data
+ ┣ Matteo_Gottardelli_237749_Report.pdf # Report
+ ┣ Latex source     # Folder with Original files from which the pdf was generated
+ ┗
+```
 # Code Overview
 
 ## Main
