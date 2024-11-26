@@ -142,12 +142,12 @@ brew install pwd
 ```
 2. Make an alias, copy this instruction, but substitute with <Path From pwd> the path outputed previously
 ```bash
-alias local_path='<Path From pwd>'
+local_path='<Path From pwd>'
 ```
 If that doesn't work, maybe the '' are indexed different, so change them manually
 3. Create another alias with your email of the cluster you have logined with, if you are part of Unitn Cluster it is like:
 ```bash
-alias cluster_mail='<username>@hpc.unitn.it'
+cluster_mail='<username>@hpc.unitn.it'
 ```
 4. Knowing that you would like to load all files in a specific directory, save in an alias the destination path of this folder, with you what it to be in the position you are on the cluster terminal, you can run this (ON CLUSTER):
 ```bash
@@ -157,7 +157,7 @@ pwd
 ```
 5. Copy this path and create on the other terminal running this:
 ```bash
-alias cluster_path='<Path Destination>'
+cluster_path='<Path Destination>'
 ```
 6. Now, if you have correctly set the alias, you can directly run this command, in the native terminal (NOT THE CLUSTER ONE):
 ```bash
