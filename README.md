@@ -88,6 +88,7 @@ If you would like to connect to a cluster, the connection has to be protected by
 ## Clone Git
 1. Access to your GitHub account, running the command below in the terminal on your computer:
 ```bash
+cd ~
 gh auth login
 ```
 If it doesn't work you may have to download some extra dependencies, like gh.
