@@ -37,15 +37,15 @@ This is a project done by Matteo Gottardelli which is the owner and responsible 
 # Project Layout
 ```
 Matteo Gottardelli Project
- ┣ Matrix Transposition 				# Project files folder
- ┃ ┣ main.c 			              # Main Script with essential code
- ┃ ┣ functions.h 	              # Headers of file functions.c
+ ┣ Matrix Transposition         # Project files folder
+ ┃ ┣ main.c                     # Main Script with essential code
+ ┃ ┣ functions.h                # Headers of file functions.c
  ┃ ┗ functions.c                # Definitions in functions.h
  ┣ All Simulations              # All past simulations, data and file Excel
  ┃ ┗ ...
- ┣ Definitive Simulation	      # Simulation to take as reference for report and the project
- ┃ ┣ results				            # Folder with all .csv files
- ┃ ┗ analysis.xlsx 	            # File excel summarizing the collected data
+ ┣ Definitive Simulation        # Simulation to take as reference for report and the project
+ ┃ ┣ results                    # Folder with all .csv files
+ ┃ ┗ analysis.xlsx              # File excel summarizing the collected data
  ┣ Matteo_Gottardelli_237749_Report.pdf # Report
  ┗ Latex source                 # Folder with Original files from which the pdf was generated
 ```
