@@ -178,6 +178,37 @@ To run the simulation as I've run it, you have to include some libraries in the 
 2) Do the simulation in an interactive session, because you may want to see the behaviour of a particular simulation of a set of parameters, so do this each time you enter in a new one<br>
 3) You can set them as default libraries, so they will be directly included in the interactive session<br><br>
 The simulation have been done using gcc91 and numactl library. The first one is the C compiler Version 9.1.0, meanwhile numactl is a library that allow a control of the single sockets, which will help some simulations with an high number of threads.<br>
+Remember that you are free to use other libraries, but I you want to emulate the simulations and you chose 3) follow this:<br>
+1. We have to modify the .bashrc file, an hidden one. Go to the head node, if you are in Matrix_Transposition, you may do:
+```bash
+cd ..
+ls -la
+```
+2. Now theoretically, you will be in the folder with .bashrc, run:
+```bash
+vi .bashrc
+```
+3. The file will be opened and you have to press I to be able to modify it. So, press I and insert with copy and paste under #User specific aliases and functions, this:
+```bash
+module load gcc91
+alias gcc=gcc-9.1.0
+module load numactl
+```
+4. Now to exit the file type the following in order:
+• 'esc' button
+• :w in order to save the file
+• :q in order to close the file
+5. Now try run a try interactive session in order to see if .bashrc works, so run:
+```bash
+qsub -I -q short_cpuQ
+```
+```bash
+module list
+```
+You will see all the modules you have loaded, including gcc91 and numactl. After this you can exit from the interactive session running:
+```bash
+exit
+```
 
 ### Run Project
 
