@@ -211,7 +211,19 @@ exit
 ```
 
 ### Run Project
-
+Now the environment is completly set and you can start running the project. You have two possibilities:<br>
+1) PBS execution<br>
+In the folder you will find two files .pbs, one transposition_complete.pbs (to run requires almost 15 minutes), which will perform all the simulations at I have performed to develop this project and a transposition_essential.pbs (to run requires less than 2 minutes), which are the essential like the best implicit algorithm and compilation with flags and the best OMP.<br>
+To run it you perform this:
+```bash
+qsub <pbs file>
+```
+If you want to monitor the code, you may run:
+```bash
+qstat -u <username>
+```
+This pbs will generate a folder results, if already presence, will add an integer after it and generate various files for the results and for the single times one general and one for each mode to see detailed specific for each modes jump to [Code Overview](#code-overview)
+3) 
 ### Download Results
 
 # Project Layout
