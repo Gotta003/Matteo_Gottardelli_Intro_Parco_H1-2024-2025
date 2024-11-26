@@ -10,7 +10,7 @@
     - [Access Cluster](#access-cluster)
     - [Import Project](#import-project)
     - [Import Libraries](#import-libraries)
-    - [Run Project](#import-libraries)
+    - [Run Project](#run-project)
     - [Download Results](#download-results)
 - [Project Layout](#project-layout)
 - [Code Overview](#code-overview)
