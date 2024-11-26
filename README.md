@@ -229,9 +229,38 @@ mv transpose.o <dest_folder>
 mv transpose.e <dest_folder>
 ```
 This isn't mandatory, but if you would like a detailed overview you have to do this, because with the next .pbs execution they will be overwritten.<br><br>
+The definitive simulation was performed in a node with 96 CPUs, but to accomodate the conditions above, the system may give you a 72 CPUs node, so some performances may be different because of that.<br>
 2) Interactive Session
-
-3) 
+To run a simulation of a desired combination of parameters, you have to follow these steps:
+1. Open an interactive session, with the following parameters:
+```bash
+qsub -I -l select=1:ncpus=64:ompthreads=64:mem=1Gb -q short_cpuQ
+```
+2. Go to the folder and check the details of the architecture, if are what you are expecting:
+```bash
+cd Matrix_Transposition
+lscpu
+```
+3. Compile the code with gcc command the sequential code of the desired size or test_mode (to see the sintax of each parameter jump to [Code Overview](#code-overview))
+```bash
+gcc -O0 functions.c transpose.c -o transpose -fopenmp -lm
+```
+The definitive simulation was performed in a node with 96 CPUs, but to accomodate the conditions above, the system may give you a 72 CPUs node, so some performances may be different because of that.
+4. Then run:
+```bash
+./transpose SO0 1 <size> <test_mode> 25
+```
+This will generate 4 files, two dedicated for sequential code (time and average) and two general.
+5. Now you can perform which compilation you'd like, following the following structure:
+```bash
+gcc <efficiency flag -O0/-O1/-O2> <other flags> functions.c transpose.c -o transpose -fopenmp -lm
+```
+The last two flags are always mandatory due to my C code, because to calculate the time I use an omp function, even though I don't use OMP and -lm to explicitly link the two files in compilation
+6. The execution in brief:
+```bash
+<eventually numactl for 64 threads> ./transpose <code_identifier> <mode> <size> <test_mode> <samples> <n° threads (not mandatory and ignored for mode from 1-3)>
+```
+Jump to [Code Overview](#code-overview)), to see a detailed description of each parameter.<br>
 ### Download Results
 
 # Project Layout
