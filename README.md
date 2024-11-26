@@ -222,7 +222,15 @@ If you want to monitor the code, you may run:
 ```bash
 qstat -u <username>
 ```
-This pbs will generate a folder results, if already presence, will add an integer after it and generate various files for the results and for the single times one general and one for each mode to see detailed specific for each modes jump to [Code Overview](#code-overview)
+This pbs will generate a folder results, if already presence, will add an integer after it and generate various files .csv for the results and for the single times one general and one for each mode to see detailed specific for each modes jump to [Code Overview](#code-overview). 
+At the end of execution the files will be moved in the first created folder, but not the transpose.o and transpose.e files which are the prints on stdout and stderr, that are created when the pbs file expires its execution. So you have to them with this command:
+```bash
+mv transpose.o <dest_folder>
+mv transpose.e <dest_folder>
+```
+This isn't mandatory, but if you would like a detailed overview you have to do this, because with the next .pbs execution they will be overwritten.<br><br>
+2) Interactive Session
+
 3) 
 ### Download Results
 
