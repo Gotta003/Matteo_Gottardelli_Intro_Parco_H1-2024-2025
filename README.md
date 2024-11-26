@@ -161,7 +161,7 @@ cluster_path='<Path Destination>'
 ```bash
 scp -r $local_path $cluster_mail:$cluster_path
 ```
-After this you will required to insert the password to access to your cluster account and after that then running this you will see the three files:
+After this you will required to insert the password to access to your cluster account and after that then running this you will see the files:
 ```bash
 cd Matrix_Transposition
 ls
@@ -173,6 +173,11 @@ echo $cluster_mail
 echo $cluster_path
 ```
 ### Import Libraries
+To run the simulation as I've run it, you have to include some libraries in the cluster, in specific, but here you these possibility:<br>
+1) You want to run the simulations via the pbs files and there the libraries are added, so you can skip right now<br>
+2) Do the simulation in an interactive session, because you may want to see the behaviour of a particular simulation of a set of parameters, so do this each time you enter in a new one<br>
+3) You can set them as default libraries, so they will be directly included in the interactive session<br><br>
+The simulation have been done using gcc91 and numactl library. The first one is the C compiler Version 9.1.0, meanwhile numactl is a library that allow a control of the single sockets, which will help some simulations with an high number of threads.<br>
 
 ### Run Project
 
