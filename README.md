@@ -21,6 +21,7 @@
 - [Contact](#contact)
   
 ---
+
 # Introduction
 
 The purpose of this project is studying various ways to optimize a matrix transposition starting from a sequential code. All the analysis and reflection on the result obtained can be found in the report, but to get a more in-depth of all the simulations done to do this project and the definitive results obtained you can see the folder results. The ways that I explored the Transposition and Symmetry are:<br><br>
@@ -35,9 +36,11 @@ The combionation of these 4 generated these explored ways:<br><br>
 (5) **Global Work-Sharing**<br>
 (6) **Local Block-Based**<br>
 (7) **Global Block-Based**<br><br>
-This is a project done by Matteo Gottardelli which is the owner and responsible of any element in this repository.
+This is a project done by Matteo Gottardelli which is the owner and responsible of any element in this repository.<br><br>
 [Back to top](#table-of-contents)
+
 ---
+
 # Project Layout
 ```
 Matteo Gottardelli Project
@@ -53,8 +56,11 @@ Matteo Gottardelli Project
  ┣ Matteo_Gottardelli_237749_Report.pdf # Report
  ┗ Latex source                 # Folder with Original files from which the pdf was generated
 ```
+
 [Back to top](#table-of-contents)
+
 ---
+
 # Software and Cluster Requirements
 - **Cluster**:<br>
 All the simulations you can find in the results folder have been done on a cluster offered by the University of Trento. These were all done in a node that had a minimum of 64 cpus for standard purposes and for OpenMP and for safe I reserved 1 Gb of memory, which is x4 the memory needed for the maximum size.<br>
@@ -92,7 +98,10 @@ lscpu
 ```
 - **Native Machine**:<br>
 This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)<br><br>
-Some operations with Moba aren't necessary to use the instructions in this readMe, like transfering files from and to the cluster.<br>
+Some operations with Moba aren't necessary to use the instructions in this readMe, like transfering files from and to the cluster.<br><br>
+[Back to top](#table-of-contents)
+
+---
 
 # Installation and Configuration
 
@@ -137,8 +146,11 @@ gh repo clone Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025
 ```bash
 cd Matteo_Gottardelli_Intro_Parco_H1-2024-2025
 ```
-Now, your are in the folder.
-3. 
+Now, your are in the folder.<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 ## Cluster 
 ### Access Cluster
 1. Now leaving the previous terminal window of the cloned repository, but it has to still be open, open a new terminal window
@@ -192,6 +204,11 @@ echo $local_path
 echo $cluster_mail
 echo $cluster_path
 ```
+<br>
+[Back to top](#table-of-contents)
+
+---
+
 ### Import Libraries
 To run the simulation as I've run it, you have to include some libraries in the cluster, in specific, but here you these possibility:<br>
 1) You want to run the simulations via the pbs files and there the libraries are added, so you can skip right now<br>
@@ -229,6 +246,11 @@ You will see all the modules you have loaded, including gcc91 and numactl. After
 ```bash
 exit
 ```
+<br>
+[Back to top](#table-of-contents)
+
+---
+
 ## Run Project
 ### Warnings before Running
 Be careful before running of two things:
@@ -244,6 +266,10 @@ After doing this to exit from this modality press (control + X), then Y and ENTE
 lscpu
 ```
 An then change if you want these constants, by doing the command nano on functions.h and modify them at lines according to your system. Obviously, if you have more caches or less you have to manually change the function ClearAllCaches. Mine properties are the following: (CACHEL1D 32KB, CACHEL1I 32KB, CACHEL2 1024KB, CACHEL3 36608KB (less than 36MB but this was to made to make it a perfect power of 2)).<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 ### Running Time
 Now the environment is completly set and you can start running the project. You have two possibilities:<br>
 1) PBS execution<br>
@@ -294,7 +320,11 @@ The last two flags are always mandatory due to my C code, because to calculate t
 ```bash
 <eventually numactl for 64 threads> ./transpose <code_identifier> <mode> <size> <test_mode> <samples> <n° threads (not mandatory and ignored for mode from 1-3)>
 ```
-Jump to [Code Overview](#code-overview)), to see a detailed description of each parameter.<br>
+Jump to [Code Overview](#code-overview)), to see a detailed description of each parameter.<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 ### Download Results
 If you want to transfer a file or a folder from cluster to your local machine, you have to perform the previous scp command in reverse. So, create a variable for the destination location:
 ```bash
@@ -304,7 +334,11 @@ And then run the following command (if a file remove -r, the example is a folder
 ```bash
 scp -r cluster_mail:cluster_path dest_path
 ```
-Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.
+Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 # Code Overview
 ## Input Parameters
 The code takes as for input 6 parameters:<br>
@@ -395,11 +429,27 @@ You can add other signatures as you wish there is no limit, the most important t
 </table>
 The generation of the same values obviously doing simulations will logically be inaccurate if the cache is not free. In my code the problem is not present in the most cases, thanks to a function that indirectly frees the caches, so these static matrices would be a problem.<br><br>
 5. Samples - In my code, at each execution will be output directly the average of the times, in order to internally compute the speedup and the efficienct thanks to that algorithm a number of samples can be inputed and all the outputs will be viewable in times*.csv files, but the average time, the speedup and the efficiency will be calculated according to the 40% in the middle of the data. Because of this I've decided to put a minimum of input samples per simulation on 25, in order to take the 10 values in the middle of an ordered array and cutting off the outliers, but there is no above limit, but to it parsimonously, otherwise your simulation can be take an enormous amount of time.<br><br>
-6. Number of Threads - This is a not mandatory parameter in the first three modes (sequential and implicit) and the program will work otherwise, because that will be just ignored, but for the other modes (OMP), that is mandatory. The value has to be a power of 2 and the numbers have to be between 1 and 64, so in this specific project could not be run threads other than 1, 2, 4, 8, 16, 32 and 64.
+6. Number of Threads - This is a not mandatory parameter in the first three modes (sequential and implicit) and the program will work otherwise, because that will be just ignored, but for the other modes (OMP), that is mandatory. The value has to be a power of 2 and the numbers have to be between 1 and 64, so in this specific project could not be run threads other than 1, 2, 4, 8, 16, 32 and 64.<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 
 ## Functions
-ef
+ef<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 ## Possible Environment Optimizations
-ega
+ega<br><br>
+[Back to top](#table-of-contents)
+
+---
+
 # Contact
-aega
+aega<br><br>
+[Back to top](#table-of-contents)
+
+---
+
