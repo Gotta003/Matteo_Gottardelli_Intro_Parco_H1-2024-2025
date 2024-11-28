@@ -17,6 +17,7 @@
 - [Code Overview](#code-overview)
   - [Main](#main)
   - [Functions](#functions)
+  - [Possible Environment Optimizations](#possible-environment-optimizations)
 - [Contact](#contact)
   
 
@@ -359,12 +360,12 @@ Each mode is identified with an integer and if there are any particular configur
         </tr>
 </table>
 You can add other signatures as you wish there is no limit, the most important thing is that in order to have speedup and efficiency in the results, you have to run it mandatory with SO0 1 as the first two parameters with the desired size and test_mode, but how you use the acronyms is your business, because I don't know with which flag you are running. Obviously, you have to pay attention to this, if you are in an interactive session, if you are using my pbs files, don't worry because they are already preimposted.<br><br>
-2. Size - The algorithm works only with power of two and sizes between 16 and 4096, so it takes as input the exponential of the power from 4 to 12 (16->4, 32->5, 64->6, 128->7, 256->8, 512->9, 1024->10, 2048->11, 4096->12).<br><br>
-3. Test Mode - The project assigned asked only to analyze a standard case, so assign to a matrix random numbers, verify if that is symmetric and make a transposition, but to verify different behaviours I've created 4 test mode, the first for normal usage and the others for testing.<br>
+3. Size - The algorithm works only with power of two and sizes between 16 and 4096, so it takes as input the exponential of the power from 4 to 12 (16->4, 32->5, 64->6, 128->7, 256->8, 512->9, 1024->10, 2048->11, 4096->12).<br><br>
+4. Test Mode - The project assigned asked only to analyze a standard case, so assign to a matrix random numbers, verify if that is symmetric and make a transposition, but to verify different behaviours I've created 4 test mode, the first for normal usage and the others for testing.<br>
 <table>
         <tr>
             <th>Compiler Code</th>
-            <th>Scope<th>
+            <th>Scope</th>
             <th>Description</th>
         </tr>
         <tr>
@@ -389,7 +390,9 @@ You can add other signatures as you wish there is no limit, the most important t
         </tr>
 </table>
 The generation of the same values obviously doing simulations will logically be inaccurate if the cache is not free. In my code the problem is not present in the most cases, thanks to a function that indirectly frees the caches, so these static matrices would be a problem.<br><br>
-4. Samples - In my code, at each execution will be output directly the average of the times, in order to internally compute the speedup and the efficienct thanks to that algorithm
+5. Samples - In my code, at each execution will be output directly the average of the times, in order to internally compute the speedup and the efficienct thanks to that algorithm a number of samples can be inputed and all the outputs will be viewable in times*.csv files, but the average time, the speedup and the efficiency will be calculated according to the 40% in the middle of the data. Because of this I've decided to put a minimum of input samples per simulation on 25, in order to take the 10 values in the middle of an ordered array and cutting off the outliers, but there is no above limit, but to it parsimonously, otherwise your simulation can be take an enormous amount of time.<br><br>
+6. Number of Threads - This is a not mandatory parameter in the first three modes (sequential and implicit) and the program will work otherwise, because that will be just ignored, but for the other modes (OMP), that is mandatory. The value has to be a power of 2 and the numbers have to be between 1 and 64, so in this specific project could not be run threads other than 1, 2, 4, 8, 16, 32 and 64.<br><br>
 ## Functions
 
+##Possible Environment Optimizations
 # Contact
