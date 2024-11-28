@@ -233,7 +233,7 @@ nano <name .pbs file>.pbs
 ``` 
 This will open you an interactive environment on which you can modify the file.<br>
 Both the pbs file have the line to modify at 22. And instead of that you have to modify the username and after it the path to the destination folder.<br>
-After doing this to exit from this modality press (control + X), then Y and ENTER. Now you can freerly run your pbs file as is explain in advance.
+After doing this to exit from this modality press (control + X), then Y and ENTER. Now you can freerly run your pbs file as is explain in advance.<br><br>
 2. My C code in order to run on the cluster with simulation trigger implicitly the cache in order to free it an make it as clear as possible. Do to this in the header file I've put the values of the caches extracted from the command lscpu on the node with 96 CPU. This will guarantee a pretty good clean with all the system with equal or less cache dimensions. But if you run in a smaller node requesting a lower number of CPUs or you are not running on my same cluster as introduced before, you may need to change these costant. To see the properties of the node you want to run on, you can perform:
 ```bash
 lscpu
