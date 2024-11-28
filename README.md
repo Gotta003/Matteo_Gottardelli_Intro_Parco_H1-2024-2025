@@ -99,6 +99,7 @@ lscpu
 - **Native Machine**:<br>
 This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)<br><br>
 Some operations with Moba aren't necessary to use the instructions in this readMe, like transfering files from and to the cluster.<br><br>
+
 [Back to top](#table-of-contents)
 
 ---
@@ -147,6 +148,7 @@ gh repo clone Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025
 cd Matteo_Gottardelli_Intro_Parco_H1-2024-2025
 ```
 Now, your are in the folder.<br><br>
+
 [Back to top](#table-of-contents)
 
 ---
@@ -266,6 +268,7 @@ After doing this to exit from this modality press (control + X), then Y and ENTE
 lscpu
 ```
 An then change if you want these constants, by doing the command nano on functions.h and modify them at lines according to your system. Obviously, if you have more caches or less you have to manually change the function ClearAllCaches. Mine properties are the following: (CACHEL1D 32KB, CACHEL1I 32KB, CACHEL2 1024KB, CACHEL3 36608KB (less than 36MB but this was to made to make it a perfect power of 2)).<br><br>
+
 [Back to top](#table-of-contents)
 
 ---
@@ -321,6 +324,7 @@ The last two flags are always mandatory due to my C code, because to calculate t
 <eventually numactl for 64 threads> ./transpose <code_identifier> <mode> <size> <test_mode> <samples> <n° threads (not mandatory and ignored for mode from 1-3)>
 ```
 Jump to [Code Overview](#code-overview)), to see a detailed description of each parameter.<br><br>
+
 [Back to top](#table-of-contents)
 
 ---
@@ -335,6 +339,7 @@ And then run the following command (if a file remove -r, the example is a folder
 scp -r cluster_mail:cluster_path dest_path
 ```
 Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.<br><br>
+
 [Back to top](#table-of-contents)
 
 ---
