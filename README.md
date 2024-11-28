@@ -11,8 +11,9 @@
     - [Access Cluster](#access-cluster)
     - [Import Project](#import-project)
     - [Import Libraries](#import-libraries)
-    - [Run Project](#run-project)
-    - [Download Results](#download-results)
+  - [Run Project](#run-project)
+    - [Warnings Before Running](#warnings-before-running)
+  - [Download Results](#download-results)
 - [Code Overview](#code-overview)
   - [Main](#main)
   - [Functions](#functions)
@@ -223,8 +224,22 @@ You will see all the modules you have loaded, including gcc91 and numactl. After
 ```bash
 exit
 ```
-
-### Run Project
+## Run Project
+### Warnings before Running
+Be careful before running of two things:
+1. Before runnnig a PBS file you have to change inside it the path to create the files on it, according to the path in your cluster to save it in the directory you like. You can done it directly on the Cluster going in the folder previously exported Matrix_Transposition and performing:
+```bash
+nano <name .pbs file>.pbs
+``` 
+This will open you an interactive environment on which you can modify the file.<br>
+Both the pbs file have the line to modify at 22. And instead of that you have to modify the username and after it the path to the destination folder.<br>
+After doing this to exit from this modality press (control + X), then Y and ENTER. Now you can freerly run your pbs file as is explain in advance.
+2. My C code in order to run on the cluster with simulation trigger implicitly the cache in order to free it an make it as clear as possible. Do to this in the header file I've put the values of the caches extracted from the command lscpu on the node with 96 CPU. This will guarantee a pretty good clean with all the system with equal or less cache dimensions. But if you run in a smaller node requesting a lower number of CPUs or you are not running on my same cluster as introduced before, you may need to change these costant. To see the properties of the node you want to run on, you can perform:
+```bash
+lscpu
+```
+An then change if you want these constants, by doing the command nano on functions.h and modify them at lines according to your system. Obviously, if you have more caches or less you have to manually change the function ClearAllCaches. Mine properties are the following: (CACHEL1D 32KB, CACHEL1I 32KB, CACHEL2 1024KB, CACHEL3 36608KB (less than 36MB but this was to made to make it a perfect power of 2)).<br><br>
+### Running Time
 Now the environment is completly set and you can start running the project. You have two possibilities:<br>
 1) PBS execution<br>
 In the folder you will find two files .pbs, one transposition_complete.pbs (to run requires almost 37 minutes), which will perform all the simulations at I have performed to develop this project and a transposition_essential.pbs (to run requires less than 2 minutes), which are the essential like the best implicit algorithm and compilation with flags and the best OMP.<br>
@@ -288,8 +303,9 @@ Being csv files, I've computed the results and the graphs on excel, importing th
 # Code Overview
 ## Main
 • **Input Parameters**: The code takes as for input 6 parameters:<br>
-1. Compiler Code and modes - To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier, these are the flags used in my tests, each mode is identified with an integer:
+1 & 2. Acronym and modes - The first two parameters to give in input to the system is an acronym and an integer indicating a particolar mode. To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier was added as the first parameter. These are the flags used in my tests for the implicit modes:
 
+Each mode is identified with an integer and if there are any particular configuration with flags is indicated thanks to the acronym and there are the configurations (acronym - mode) that I have used according to my code:
 <table>
         <tr>
             <th>Compiler Code</th>
@@ -342,7 +358,38 @@ Being csv files, I've computed the results and the graphs on excel, importing th
         	  <td>Explicit Parallelized Code with OMP with a block-based technique for transposition and checking with NO interruption of the cycle</td>
         </tr>
 </table>
-
+You can add other signatures as you wish there is no limit, the most important thing is that in order to have speedup and efficiency in the results, you have to run it mandatory with SO0 1 as the first two parameters with the desired size and test_mode, but how you use the acronyms is your business, because I don't know with which flag you are running. Obviously, you have to pay attention to this, if you are in an interactive session, if you are using my pbs files, don't worry because they are already preimposted.<br><br>
+2. Size - The algorithm works only with power of two and sizes between 16 and 4096, so it takes as input the exponential of the power from 4 to 12 (16->4, 32->5, 64->6, 128->7, 256->8, 512->9, 1024->10, 2048->11, 4096->12).<br><br>
+3. Test Mode - The project assigned asked only to analyze a standard case, so assign to a matrix random numbers, verify if that is symmetric and make a transposition, but to verify different behaviours I've created 4 test mode, the first for normal usage and the others for testing.<br>
+<table>
+        <tr>
+            <th>Compiler Code</th>
+            <th>Scope<th>
+            <th>Description</th>
+        </tr>
+        <tr>
+          <th>0</th>
+          <th>Random</th>
+          <th>General purpose to make a check of symmetry and in case a matrix transposition , with random value, hopefully not repetitives because of unseeded srand</th>
+        </tr>
+        <tr>
+          <th>1</th>
+          <th>Static Matrix</th>
+          <th>Mode used for testing and to discuss the report results, it uses a matrix with standard values according to an algorithm guaranteeing that each simulation has the exactly same values.</th>
+        </tr>
+        <tr>
+          <th>2</th>
+          <th>Symmetric</th>
+          <th>Mode that inizializes all the locations of a matrix with an always equal value</th>
+        </tr>
+        <tr>
+          <th>3</th>
+          <th>Worst Case</th>
+          <th>Mode that iniziates all the locatuibs if a matrix with the same value, but after that changes the one at the bottom right of the matrix, but not on the main diagonal, because my algorithms will run from the high to low, row by row, being row-based algorithms. So, this will lead to a check of symmetry that will be true until the last one which will lead to a matrix transposition.</th>
+        </tr>
+</table>
+The generation of the same values obviously doing simulations will logically be inaccurate if the cache is not free. In my code the problem is not present in the most cases, thanks to a function that indirectly frees the caches, so these static matrices would be a problem.<br><br>
+4. Samples - In my code, at each execution will be output directly the average of the times, in order to internally compute the speedup and the efficienct thanks to that algorithm
 ## Functions
 
 # Contact
