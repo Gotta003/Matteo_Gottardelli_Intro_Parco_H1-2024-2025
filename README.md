@@ -20,7 +20,7 @@
   - [Possible Environment Optimizations](#possible-environment-optimizations)
 - [Contact](#contact)
   
-
+---
 # Introduction
 
 The purpose of this project is studying various ways to optimize a matrix transposition starting from a sequential code. All the analysis and reflection on the result obtained can be found in the report, but to get a more in-depth of all the simulations done to do this project and the definitive results obtained you can see the folder results. The ways that I explored the Transposition and Symmetry are:<br><br>
@@ -35,7 +35,9 @@ The combionation of these 4 generated these explored ways:<br><br>
 (5) **Global Work-Sharing**<br>
 (6) **Local Block-Based**<br>
 (7) **Global Block-Based**<br><br>
-This is a project done by Matteo Gottardelli which is the owner and responsible of any element in this repository.<br>
+This is a project done by Matteo Gottardelli which is the owner and responsible of any element in this repository.
+[Back to top](#table-of-contents)
+---
 # Project Layout
 ```
 Matteo Gottardelli Project
@@ -51,6 +53,8 @@ Matteo Gottardelli Project
  ┣ Matteo_Gottardelli_237749_Report.pdf # Report
  ┗ Latex source                 # Folder with Original files from which the pdf was generated
 ```
+[Back to top](#table-of-contents)
+---
 # Software and Cluster Requirements
 - **Cluster**:<br>
 All the simulations you can find in the results folder have been done on a cluster offered by the University of Trento. These were all done in a node that had a minimum of 64 cpus for standard purposes and for OpenMP and for safe I reserved 1 Gb of memory, which is x4 the memory needed for the maximum size.<br>
