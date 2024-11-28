@@ -302,8 +302,8 @@ scp -r cluster_mail:cluster_path dest_path
 ```
 Being csv files, I've computed the results and the graphs on excel, importing the file, but you may use python natively in the cluster to elaborate the data. But arrived here, you have obtained your desired data.
 # Code Overview
-## Main
-• **Input Parameters**: The code takes as for input 6 parameters:<br>
+## Input Parameters
+The code takes as for input 6 parameters:<br>
 1 & 2. Acronym and modes - The first two parameters to give in input to the system is an acronym and an integer indicating a particolar mode. To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier was added as the first parameter. These are the flags used in my tests for the implicit modes:
 
 Each mode is identified with an integer and if there are any particular configuration with flags is indicated thanks to the acronym and there are the configurations (acronym - mode) that I have used according to my code:
@@ -391,8 +391,9 @@ You can add other signatures as you wish there is no limit, the most important t
 </table>
 The generation of the same values obviously doing simulations will logically be inaccurate if the cache is not free. In my code the problem is not present in the most cases, thanks to a function that indirectly frees the caches, so these static matrices would be a problem.<br><br>
 5. Samples - In my code, at each execution will be output directly the average of the times, in order to internally compute the speedup and the efficienct thanks to that algorithm a number of samples can be inputed and all the outputs will be viewable in times*.csv files, but the average time, the speedup and the efficiency will be calculated according to the 40% in the middle of the data. Because of this I've decided to put a minimum of input samples per simulation on 25, in order to take the 10 values in the middle of an ordered array and cutting off the outliers, but there is no above limit, but to it parsimonously, otherwise your simulation can be take an enormous amount of time.<br><br>
-6. Number of Threads - This is a not mandatory parameter in the first three modes (sequential and implicit) and the program will work otherwise, because that will be just ignored, but for the other modes (OMP), that is mandatory. The value has to be a power of 2 and the numbers have to be between 1 and 64, so in this specific project could not be run threads other than 1, 2, 4, 8, 16, 32 and 64.<br><br>
-## Functions
+6. Number of Threads - This is a not mandatory parameter in the first three modes (sequential and implicit) and the program will work otherwise, because that will be just ignored, but for the other modes (OMP), that is mandatory. The value has to be a power of 2 and the numbers have to be between 1 and 64, so in this specific project could not be run threads other than 1, 2, 4, 8, 16, 32 and 64.<br><br
+                                                                                                                                                                                                                                                                                                                                         ##
+                                                                                                                                                                                                                                                                                                                                                                                                                   Functions
 
-##Possible Environment Optimizations
+## Possible Environment Optimizations
 # Contact
