@@ -1,0 +1,4 @@
+N°        Compile    Mode  Dimension  Test_Mode  Samples    Threads    Avg_Time(s)     Seq_time(s)     Scaling    Efficiency
+30         OMP11      7     4096       1          5          1          0.876580119133  0.197490602732  0.23       22.53     %
+41         O1         7     16         1          5          1          0.000030200001  0.000001000000  0.03       3.31      %
+133        O1         7     256        1          100        1          0.002658129903  0.000126739920  0.05       4.77      %
