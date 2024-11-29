@@ -17,7 +17,6 @@
 - [Code Overview](#code-overview)
   - [Input Parameters](#input-parameters)
   - [Flow of the program](#flow-of-the-program)
-  - [Possible Environment Optimizations](#possible-environment-optimizations)
 - [Contact](#contact)
   
 ---
