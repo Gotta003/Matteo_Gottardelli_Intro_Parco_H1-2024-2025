@@ -95,6 +95,34 @@ You can see these information on a Linux system using:
 ```bash
 lscpu
 ```
+The final simulations I've saved as definitive are one on 96 and two on 72. The first one is the more detailed one, so I'll leave you below the description for the on with 72 CPUs, but be careful that the data on the report are based on 96 CPUs architecture.
+```bash
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                72
+On-line CPU(s) list:   0-71
+Thread(s) per core:    1
+Core(s) per socket:    18
+Socket(s):             4
+NUMA node(s):          4
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Gold 6154 CPU @ 3.00GHz
+Stepping:              4
+CPU MHz:               3000.000
+BogoMIPS:              6000.00
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              25344K
+NUMA node0 CPU(s):     0-17
+NUMA node1 CPU(s):     18-35
+NUMA node2 CPU(s):     36-53
+NUMA node3 CPU(s):     54-71
+```
 - **Native Machine**:<br>
 This project was developed with a MacOS machine, the simulation wasn't done on the cluster, but I've said this to evidence that I didn't work with MobaxTerm (an application that gives a GUI interface to the user interfacing with a cluster). The download page for this application is right here an if you have a windows architecture it's highly recommended to use this: [mobaxterm](https://mobaxterm.mobatek.net/download.html)<br><br>
 Some operations with Moba aren't necessary to use the instructions in this readMe, like transfering files from and to the cluster.<br><br>
