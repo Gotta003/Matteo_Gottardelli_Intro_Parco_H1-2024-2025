@@ -1,0 +1,391 @@
+gcc-9.1.0 (GCC) 9.1.0
+Copyright (C) 2019 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                96
+On-line CPU(s) list:   0-95
+Thread(s) per core:    1
+Core(s) per socket:    24
+Socket(s):             4
+NUMA node(s):          4
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Gold 6252N CPU @ 2.30GHz
+Stepping:              7
+CPU MHz:               2300.000
+BogoMIPS:              4600.00
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              36608K
+NUMA node0 CPU(s):     0-23
+NUMA node1 CPU(s):     24-47
+NUMA node2 CPU(s):     48-71
+NUMA node3 CPU(s):     72-95
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf eagerfpu pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch epb cat_l3 cdp_l3 invpcid_single intel_ppin ssbd mba rsb_ctxsw ibrs ibpb stibp ibrs_enhanced tpr_shadow vnmi flexpriority ept vpid fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm cqm mpx rdt_a avx512f avx512dq rdseed adx smap clflushopt clwb intel_pt avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local dtherm ida arat pln pts pku ospke avx512_vnni md_clear spec_ctrl intel_stibp flush_l1d arch_capabilities
+Time Elapsed (get time)=0.000001057982
+Time Elapsed (get time)=0.000001041219
+Time Elapsed (get time)=0.000001126900
+Time Elapsed (get time)=0.000001136214
+Time Elapsed (get time)=0.000001363456
+Time Elapsed (get time)=0.000001624227
+Time Elapsed (get time)=0.000001229346
+Time Elapsed (get time)=0.000001113862
+Time Elapsed (get time)=0.000001365319
+Time Elapsed (get time)=0.000001115724
+Time Elapsed (get time)=0.000001102686
+Time Elapsed (get time)=0.000001270324
+Time Elapsed (get time)=0.000001236796
+Time Elapsed (get time)=0.000001111999
+Time Elapsed (get time)=0.000001100823
+Time Elapsed (get time)=0.000001104549
+Time Elapsed (get time)=0.000001087785
+Time Elapsed (get time)=0.000001294538
+Time Elapsed (get time)=0.000001385808
+Time Elapsed (get time)=0.000001098961
+Time Elapsed (get time)=0.000001074746
+Time Elapsed (get time)=0.000001128763
+Time Elapsed (get time)=0.000001106411
+Time Elapsed (get time)=0.000001071021
+Time Elapsed (get time)=0.000001115724
+0.000001102686
+0.000001104549
+0.000001106411
+0.000001111999
+0.000001113862
+0.000001115724
+0.000001115724
+0.000001126900
+0.000001128763
+0.000001136214
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 16
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.000001116283 secs
+
+Time Elapsed (get time)=0.000003026798
+Time Elapsed (get time)=0.000003322959
+Time Elapsed (get time)=0.000002924353
+Time Elapsed (get time)=0.000003140420
+Time Elapsed (get time)=0.000002864748
+Time Elapsed (get time)=0.000003034249
+Time Elapsed (get time)=0.000002911314
+Time Elapsed (get time)=0.000003220513
+Time Elapsed (get time)=0.000003030524
+Time Elapsed (get time)=0.000003209338
+Time Elapsed (get time)=0.000002980232
+Time Elapsed (get time)=0.000002900138
+Time Elapsed (get time)=0.000003017485
+Time Elapsed (get time)=0.000002995133
+Time Elapsed (get time)=0.000003205612
+Time Elapsed (get time)=0.000003255904
+Time Elapsed (get time)=0.000003064051
+Time Elapsed (get time)=0.000002952293
+Time Elapsed (get time)=0.000003250316
+Time Elapsed (get time)=0.000002952293
+Time Elapsed (get time)=0.000002983958
+Time Elapsed (get time)=0.000003011897
+Time Elapsed (get time)=0.000003179535
+Time Elapsed (get time)=0.000003023073
+Time Elapsed (get time)=0.000003220513
+0.000002983958
+0.000002995133
+0.000003011897
+0.000003017485
+0.000003023073
+0.000003026798
+0.000003030524
+0.000003034249
+0.000003064051
+0.000003140420
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 32
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.000003032759 secs
+
+Time Elapsed (get time)=0.000011043623
+Time Elapsed (get time)=0.000010607764
+Time Elapsed (get time)=0.000010527670
+Time Elapsed (get time)=0.000011149794
+Time Elapsed (get time)=0.000010477379
+Time Elapsed (get time)=0.000011088327
+Time Elapsed (get time)=0.000010468066
+Time Elapsed (get time)=0.000010643154
+Time Elapsed (get time)=0.000011274591
+Time Elapsed (get time)=0.000010931864
+Time Elapsed (get time)=0.000010715798
+Time Elapsed (get time)=0.000018248335
+Time Elapsed (get time)=0.000010620803
+Time Elapsed (get time)=0.000010853633
+Time Elapsed (get time)=0.000010985881
+Time Elapsed (get time)=0.000010672957
+Time Elapsed (get time)=0.000018205494
+Time Elapsed (get time)=0.000010469928
+Time Elapsed (get time)=0.000010937452
+Time Elapsed (get time)=0.000010779127
+Time Elapsed (get time)=0.000010559335
+Time Elapsed (get time)=0.000010456890
+Time Elapsed (get time)=0.000011011958
+Time Elapsed (get time)=0.000010812655
+Time Elapsed (get time)=0.000010870397
+0.000010620803
+0.000010643154
+0.000010672957
+0.000010715798
+0.000010779127
+0.000010812655
+0.000010853633
+0.000010870397
+0.000010931864
+0.000010937452
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 64
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.000010783784 secs
+
+Time Elapsed (get time)=0.000041749328
+Time Elapsed (get time)=0.000042112544
+Time Elapsed (get time)=0.000043157488
+Time Elapsed (get time)=0.000042507425
+Time Elapsed (get time)=0.000047286972
+Time Elapsed (get time)=0.000043878332
+Time Elapsed (get time)=0.000043923035
+Time Elapsed (get time)=0.000043381006
+Time Elapsed (get time)=0.000043373555
+Time Elapsed (get time)=0.000044221058
+Time Elapsed (get time)=0.000044014305
+Time Elapsed (get time)=0.000042803586
+Time Elapsed (get time)=0.000043096021
+Time Elapsed (get time)=0.000043032691
+Time Elapsed (get time)=0.000042883679
+Time Elapsed (get time)=0.000043239444
+Time Elapsed (get time)=0.000042693689
+Time Elapsed (get time)=0.000043163076
+Time Elapsed (get time)=0.000042822212
+Time Elapsed (get time)=0.000042948872
+Time Elapsed (get time)=0.000043071806
+Time Elapsed (get time)=0.000043697655
+Time Elapsed (get time)=0.000042609870
+Time Elapsed (get time)=0.000043636188
+Time Elapsed (get time)=0.000042613596
+0.000042822212
+0.000042883679
+0.000042948872
+0.000043032691
+0.000043071806
+0.000043096021
+0.000043157488
+0.000043163076
+0.000043239444
+0.000043373555
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 128
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.000043078886 secs
+
+Time Elapsed (get time)=0.000165052712
+Time Elapsed (get time)=0.000168066472
+Time Elapsed (get time)=0.000179208815
+Time Elapsed (get time)=0.000179016963
+Time Elapsed (get time)=0.000170148909
+Time Elapsed (get time)=0.000168154016
+Time Elapsed (get time)=0.000169834122
+Time Elapsed (get time)=0.000175883994
+Time Elapsed (get time)=0.000172536820
+Time Elapsed (get time)=0.000170409679
+Time Elapsed (get time)=0.000172413886
+Time Elapsed (get time)=0.000167641789
+Time Elapsed (get time)=0.000169305131
+Time Elapsed (get time)=0.000176254660
+Time Elapsed (get time)=0.000171879306
+Time Elapsed (get time)=0.000170972198
+Time Elapsed (get time)=0.000169450417
+Time Elapsed (get time)=0.000169342384
+Time Elapsed (get time)=0.000168923289
+Time Elapsed (get time)=0.000167483464
+Time Elapsed (get time)=0.000169033185
+Time Elapsed (get time)=0.000170240179
+Time Elapsed (get time)=0.000168556347
+Time Elapsed (get time)=0.000168275088
+Time Elapsed (get time)=0.000166874379
+0.000168556347
+0.000168923289
+0.000169033185
+0.000169305131
+0.000169342384
+0.000169450417
+0.000169834122
+0.000170148909
+0.000170240179
+0.000170409679
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 256
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.000169524370 secs
+
+Time Elapsed (get time)=0.000698834658
+Time Elapsed (get time)=0.000706510618
+Time Elapsed (get time)=0.000700585544
+Time Elapsed (get time)=0.000696348026
+Time Elapsed (get time)=0.000698108226
+Time Elapsed (get time)=0.000701863319
+Time Elapsed (get time)=0.000702580437
+Time Elapsed (get time)=0.000703873113
+Time Elapsed (get time)=0.000696051866
+Time Elapsed (get time)=0.000703489408
+Time Elapsed (get time)=0.000738121569
+Time Elapsed (get time)=0.000690266490
+Time Elapsed (get time)=0.000701887533
+Time Elapsed (get time)=0.000697745010
+Time Elapsed (get time)=0.000697471201
+Time Elapsed (get time)=0.000703809783
+Time Elapsed (get time)=0.000701738521
+Time Elapsed (get time)=0.000698726624
+Time Elapsed (get time)=0.000704588369
+Time Elapsed (get time)=0.000698182732
+Time Elapsed (get time)=0.000705026090
+Time Elapsed (get time)=0.000699155033
+Time Elapsed (get time)=0.000711578876
+Time Elapsed (get time)=0.000695770606
+Time Elapsed (get time)=0.000700399280
+0.000698182732
+0.000698726624
+0.000698834658
+0.000699155033
+0.000700399280
+0.000700585544
+0.000701738521
+0.000701863319
+0.000701887533
+0.000702580437
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 512
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.000700395380 secs
+
+Time Elapsed (get time)=0.003083968535
+Time Elapsed (get time)=0.003419376910
+Time Elapsed (get time)=0.003228507936
+Time Elapsed (get time)=0.003201449290
+Time Elapsed (get time)=0.003235753626
+Time Elapsed (get time)=0.003121104091
+Time Elapsed (get time)=0.003130510449
+Time Elapsed (get time)=0.003160700202
+Time Elapsed (get time)=0.003152813762
+Time Elapsed (get time)=0.003134453669
+Time Elapsed (get time)=0.003144375980
+Time Elapsed (get time)=0.003127114847
+Time Elapsed (get time)=0.003150105476
+Time Elapsed (get time)=0.003080449998
+Time Elapsed (get time)=0.003081880510
+Time Elapsed (get time)=0.003098268062
+Time Elapsed (get time)=0.003082714975
+Time Elapsed (get time)=0.003072526306
+Time Elapsed (get time)=0.003106627613
+Time Elapsed (get time)=0.003115607426
+Time Elapsed (get time)=0.003091646358
+Time Elapsed (get time)=0.003080535680
+Time Elapsed (get time)=0.003111926839
+Time Elapsed (get time)=0.003111783415
+Time Elapsed (get time)=0.003111800179
+0.003098268062
+0.003106627613
+0.003111783415
+0.003111800179
+0.003111926839
+0.003115607426
+0.003121104091
+0.003127114847
+0.003130510449
+0.003134453669
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 1024
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.003116919659 secs
+
+Time Elapsed (get time)=0.026880159974
+Time Elapsed (get time)=0.026696929708
+Time Elapsed (get time)=0.026709048077
+Time Elapsed (get time)=0.026276588440
+Time Elapsed (get time)=0.026854621246
+Time Elapsed (get time)=0.026743005961
+Time Elapsed (get time)=0.026741329581
+Time Elapsed (get time)=0.026618592441
+Time Elapsed (get time)=0.026438392699
+Time Elapsed (get time)=0.026484660804
+Time Elapsed (get time)=0.026474682614
+Time Elapsed (get time)=0.026636986062
+Time Elapsed (get time)=0.026375060901
+Time Elapsed (get time)=0.026210982352
+Time Elapsed (get time)=0.025805348530
+Time Elapsed (get time)=0.025735314935
+Time Elapsed (get time)=0.025599807501
+Time Elapsed (get time)=0.025347873569
+Time Elapsed (get time)=0.025201516226
+Time Elapsed (get time)=0.025282353163
+Time Elapsed (get time)=0.026793826371
+Time Elapsed (get time)=0.026701482013
+Time Elapsed (get time)=0.027243325487
+Time Elapsed (get time)=0.027363438159
+Time Elapsed (get time)=0.027030030265
+0.026276588440
+0.026375060901
+0.026438392699
+0.026474682614
+0.026484660804
+0.026618592441
+0.026636986062
+0.026696929708
+0.026701482013
+0.026709048077
+
+
+FINAL RESULTS WITH:
+MODE 1
+Dimension: 2048
+Testing: 1
+Samples: 25
+Threads: 1
+Average Time: 0.026541242376 secs
+
