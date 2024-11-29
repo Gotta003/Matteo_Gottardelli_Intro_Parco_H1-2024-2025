@@ -16,7 +16,7 @@
   - [Download Results](#download-results)
 - [Code Overview](#code-overview)
   - [Input Parameters](#input-parameters)
-  - [Functions](#functions)
+  - [Flow of the program](#flow-of-the-program)
   - [Possible Environment Optimizations](#possible-environment-optimizations)
 - [Contact](#contact)
   
@@ -440,21 +440,26 @@ The generation of the same values obviously doing simulations will logically be 
 
 ---
 
-
-## Functions
-ef<br><br>
-[Back to top](#table-of-contents)
-
----
-
-## Possible Environment Optimizations
-ega<br><br>
+## Flow of the program
+1. Verify that the input parameters inserted are correct (See above [Input Parameters](#input-parameters))<br>
+2. Choose of the subblock according to the size and the number of threads. Is always chosen, but it is used only in block-based algorithms. The minimum block is 8 and the maximum according to mine smallest memory cache (32K), considering that I do two operations with floats and doing 2 cycles tells that the maximum block is the (square of 4K)=64. But, if there are threads, this isn't true anymore, so this maximum size is divided by the number of threads. So, is choosen the minimum between the half of the input size and the maximum length divided by the number of threads. Then, is verified that the block size isn't too small, so if lower of 8 it is set to that size.<br>
+3. Starting simulations, at each iterations, which will be equal to the number of samples, will happen this:<br>
+   - 3.1 The cache is freed with the reasoning told before, which is an implicit call of the cache<br>
+   - 3.2 Allocation space of the start matrix and the destination one and the initialization according to the test mode inputed<br>
+   - 3.3 Simulation with starting time, end time in which the purpose of this program acts. This is checking if the start matrix is symmetric and then if not true transpose it in the destination matrix.
+   - 3.4 The memory is freed and the time obtained is written on a file according to the specific mode and on the general one of the times and then is saved in a local array<br>
+4. After the simulations are all done, the array in which the times are saved is reorder with a bubblesort algorithm<br>
+5. Then, is took from that reordered array the 40% in the middle and from it is computed the average time and if was done the sequential code with the size and the test mode equal to this simulation, are computed the scaling and the efficiency, too. The obtained resultes are saved in simulation summary files for each mode and general ones, which are different from the one with each single times.
+6. Now, the program is ended an ready to get other data as input.
+<br><br>
 [Back to top](#table-of-contents)
 
 ---
 
 # Contact
-aega<br><br>
+I you have any doubts or some doesn't work and in order to accreditate this documentation for exam evaluation this is my university contact:<br><br>
+Matteo Gottardelli matteo.gottardelli@studenti.unitn.it
+
 [Back to top](#table-of-contents)
 
 ---
