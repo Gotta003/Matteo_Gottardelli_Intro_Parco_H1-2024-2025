@@ -337,12 +337,12 @@ lscpu
 ```bash
 gcc -O0 functions.c transpose.c -o transpose -fopenmp -lm
 ```
-The definitive simulation was performed in a node with 96 CPUs, but to accomodate the conditions above, the system may give you a 72 CPUs node, so some performances may be different because of that.
+The definitive simulation was performed in a node with 96 CPUs, but to accomodate the conditions above, the system may give you a 72 CPUs node, so some performances may be different because of that.<br><br>
 4. Then run:
 ```bash
 ./transpose SO0 1 <size> <test_mode> 25
 ```
-This will generate 4 files, two dedicated for sequential code (time and average) and two general.
+This will generate 4 files, two dedicated for sequential code (time and average) and two general.<br><br>
 5. Now you can perform which compilation you'd like, following the following structure:
 ```bash
 gcc <efficiency flag -O0/-O1/-O2> <other flags> functions.c transpose.c -o transpose -fopenmp -lm
