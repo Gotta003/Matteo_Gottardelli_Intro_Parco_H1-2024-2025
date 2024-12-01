@@ -392,7 +392,7 @@ Being csv files, I've computed the results and the graphs on excel, importing th
 # Code Overview
 ## Input Parameters
 The code takes as for input 6 parameters:<br>
-1 & 2. Acronym and modes - The first two parameters to give in input to the system is an acronym and an integer indicating a particolar mode. To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier was added as the first parameter. These are the flags used in my tests for the implicit modes:
+1 & 2. Acronym and modes - The first two parameters to give in input to the system is an acronym and an integer indicating a particolar mode. To allow an easy recognition and collection in Excel each different combination of modes and flags with an identifier was added as the first parameter. These are the flags used in my tests for the implicit modes:<br>
 <table>
         <tr>
             <th>Flag</th>
@@ -419,7 +419,7 @@ The code takes as for input 6 parameters:<br>
         	  <td>Optimizing the code for the host CPU</td>
         </tr>
 </table>
-Each mode is identified with an integer and if there are any particular configuration with flags is indicated thanks to the acronym and there are the configurations (acronym - mode) that I have used according to my code:
+Each mode is identified with an integer and if there are any particular configuration with flags is indicated thanks to the acronym and there are the configurations (acronym - mode) that I have used according to my code:<br>
 <table>
         <tr>
             <th>Compiler Code</th>
