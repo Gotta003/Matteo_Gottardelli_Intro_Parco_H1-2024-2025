@@ -228,7 +228,7 @@ After this you will required to insert the password to access to your cluster ac
 cd Matrix_Transposition
 ls
 ```
-With you have any problem with scp, try to install it with brew or verify the content of the three variables running:
+If you have any problem with scp, try to install it with brew or verify the content of the three variables running:
 ```bash
 echo $local_path
 echo $cluster_mail
