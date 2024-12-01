@@ -527,7 +527,7 @@ The generation of the same values obviously doing simulations will logically be 
 ---
 
 # Contact
-I you have any doubts or some doesn't work and in order to accreditate this documentation for exam evaluation this is my university contact:<br><br>
+I you have any doubts or some doesn't work and in order to accreditate this documentation for exam evaluation.<br>This is my university contact:<br><br>
 Matteo Gottardelli matteo.gottardelli@studenti.unitn.it
 
 [Back to top](#table-of-contents)
