@@ -1,4 +1,4 @@
-# First Project Parallel Computer 2024-2025
+# First Project Introduction to Parallel Computing 2024-2025
 
 ## Table of Contents
 - [Introduction](#introduction)
