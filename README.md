@@ -46,7 +46,9 @@ Matteo Gottardelli Project
  ┣ Matrix Transposition         # Project files folder
  ┃ ┣ main.c                     # Main Script with essential code
  ┃ ┣ functions.h                # Headers of file functions.c
- ┃ ┗ functions.c                # Definitions in functions.h
+ ┃ ┣ functions.c                # Definitions in functions.h
+ ┃ ┣ all_simulations.pbs        # PBS file with all the simulations done (37 minutes)
+ ┃ ┗ essential_transpose.pbs    # PBS file doing the essential ones (for evaluation - 4 minutes)
  ┣ All Simulations              # All past simulations, data and file Excel
  ┃ ┗ ...
  ┣ Final Results                # Simulation to take as reference for report and the project
