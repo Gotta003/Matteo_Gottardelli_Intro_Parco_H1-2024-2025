@@ -1,4 +1,4 @@
-# Intro_ParcoH1-2024-2025
+# First Project Parallel Computer 2024-2025
 
 ## Table of Contents
 - [Introduction](#introduction)
