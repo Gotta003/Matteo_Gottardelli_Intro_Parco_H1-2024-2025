@@ -1,0 +1,94 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{caption}
+\usepackage{biblatex}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{url}
+\usepackage{pgfplots}
+\usepackage{newtxtext,newtxmath}
+\usepackage{hyperref}
+
+\pgfplotsset{compat=1.18}
+
+\definecolor{mGreen}{rgb}{0,0.6,0}
+\definecolor{mGray}{rgb}{0.5,0.5,0.5}
+\definecolor{mPurple}{rgb}{0.58,0,0.82}
+\definecolor{backgroundColour}{rgb}{0.95,0.95,0.92}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+    \bibliography{ref}
+\addbibresource{ref.bib}
+
+\lstdefinestyle{CStyle}{
+    backgroundcolor=\color{backgroundColour},   
+    commentstyle=\color{mGreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{mGray},
+    stringstyle=\color{mPurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=8pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    language=C
+}
+
+\begin{document}
+\title{Parallelizing Matrix Transposition 2024-2025}
+
+\author{
+    \IEEEauthorblockN{Matteo Gottardelli 237749}
+    \IEEEauthorblockA{\textit{Computer, Communication, and Electronics Engineering}\\
+    University of Trento, Italy\\
+    Email: matteo.gottardelli@studenti.unitn.it}
+}
+
+\maketitle
+\begin{abstract}
+This study explores methods for transposing an N$\times$N matrix, focusing on parallelization of a sequential code involving a symmetry check followed by transposition if needed.
+Parallelization was achieved using both implicit parallelism (block-based and recursive strategies) and OpenMP (OMP).
+Performance was analyzed by comparing execution times, speedups, and efficiency for different methods, matrix sizes, and thread counts.
+Simulations were conducted on the University of Trento’s cluster, with nodes having 64 CPUs, 64 OMP threads, and 1 GB of memory.
+Results show that for implicit parallelism, the block-based approach slightly outperformed the recursive method, especially for larger matrices.
+The OMP implementation exhibited overhead for small matrices (N$\leq 2^6$), but speedup improved significantly for larger sizes (N$\geq 2^{10}$), with efficiency peaking at 16 threads before bottlenecks appeared.
+\end{abstract}
+\input{report.tex}
+\printbibliography
+Link to the GitHub Page (Code):
+\href{https://github.com/Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025/tree/main/Matrix_Transposition}{Project Code}
+\newline Link to the GitHub Page (ReadME):
+\href{https://github.com/Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025/blob/main/README.md}{Project ReadME}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\columnwidth]{images/Image 1.02.png}
+    \caption{Comparison with Sequential (size-speedup)}
+    \label{fig:figure1}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\columnwidth]{images/Image 1.03.png}
+    \caption{Speedup GLB-Block-Based (N° Threads-SpeedUp)}
+    \label{fig:figure2}
+\end{figure}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=1\columnwidth]{images/Image 1.04.png}
+    \caption{Efficiency GLB-Block-Based (N° Threads-Efficiency\%)}
+    \label{fig:figure3}
+\end{figure}
+\if
+\fi
+\end{document}
