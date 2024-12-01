@@ -306,7 +306,7 @@ An then change if you want these constants, by doing the command nano on functio
 ### Running Time
 Now the environment is completly set and you can start running the project. You have two possibilities:<br>
 1) PBS execution<br>
-In the folder you will find two files .pbs, one transposition_complete.pbs (to run requires almost 37 minutes), which will perform all the simulations at I have performed to develop this project and a transposition_essential.pbs (to run requires less than 2 minutes), which are the essential like the best implicit algorithm and compilation with flags and the best OMP.<br>
+In the folder you will find two files .pbs, one transposition_complete.pbs (to run requires almost 37 minutes), which will perform all the simulations at I have performed to develop this project and a transposition_essential.pbs (to run requires 4 minutes), which are the essential like the best implicit algorithm and compilation with flags and the best OMP.<br>
 To run it you perform this:
 ```bash
 qsub <pbs file>
