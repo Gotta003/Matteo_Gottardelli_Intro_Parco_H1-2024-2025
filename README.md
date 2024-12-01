@@ -603,7 +603,7 @@ Considering for example the sequential code, it will be run on only one CPU, so 
 All the calculus and the tables can be found in Definitive Results, first table for 96 CPUs. Here below, there is the graph of the relation and is seeable that the values are mostly in the range as expected, because effective bandwidth is typically between 50% and 70% respect from the theoretical one and in the time logic the relation is the same.
 <div align="center>
   <p>
-      <img width="100% src="Latex Source/images/Image 1.06.png"">
+      <img width="100% src="Latex_Source/images/Image 1.06.png">
   </p>
 </div>
 <br><br>
