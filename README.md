@@ -531,7 +531,7 @@ The generation of the same values obviously doing simulations will logically be 
 
 ## Performances theorical Peak (Optional Task)
 Because of the lack of space on the four report page, I preferred to write the tasks to do in a good and comprehensive way, so this bonus task, I've decided to put it in the ReadME. Considering the architecture of 96 CPU, to calculate the memory bandwidth, we have to consider the following formula:
-$$Memory Bandwidth = \frac{Frequency (GHz) * Memory Bus Width (bytes) * Data Rate}$$
+$$Memory Bandwidth = Frequency (GHz) * Memory Bus Width (bytes) * Data Rate$$
 Considering the information provided above, here there is what we need:
 • Base frequency 2,3 GHz
 • Bus width 64 bit -> 8 bytes
