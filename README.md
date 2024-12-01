@@ -17,7 +17,7 @@
 - [Code Overview](#code-overview)
   - [Input Parameters](#input-parameters)
   - [Flow of the program](#flow-of-the-program)
-  - [Performances theorical peak (Optional Task)](#performances-theorical-peak)
+  - [Performances theorical peak (Optional Task)](#performances-theorical-peak-optional-task)
 - [Contact](#contact)
   
 ---
