@@ -350,10 +350,10 @@ This will generate 4 files, two dedicated for sequential code (time and average)
 ```bash
 gcc <efficiency flag -O0/-O1/-O2> <other flags> functions.c transpose.c -o transpose -fopenmp -lm
 ```
-The last two flags are always mandatory due to my C code, because to calculate the time I use an omp function, even though I don't use OMP and -lm to explicitly link the two files in compilation<br><br>
+The last two flags are always mandatory due to my C code, because to calculate the time I use an omp function, even though I don't use OMP and -lm to explicitly link the two files in compilation, but I you want to run in OMP so from mode 4 to 7, you will have to add -fopenmp-simd<br><br>
 (OPTIONAL) Be careful, if you would like to exactly reproduce my results with OpenMP you need to setup the environment variables. So, after the compilation it's important to run the following instructions:
 ```bash
- export OMP_DYNAMIC=FALSE
+export OMP_DYNAMIC=FALSE
 export OMP_SCHEDULE=STATIC
 export OMP_PROC_BIND=spread
 export OMP_PLACES=cores
@@ -361,7 +361,7 @@ export OMP_WAIT_POLICY=ACTIVE
 export OMP_NESTED=TRUE
 export OMP_CANCELLATION=TRUE
 ```
-Is not important to set the number of threads, because that is automatically handled by my C code, but if you want for some reason setup that you can run:
+Is not important to set the number of threads, because that is automatically handled by my C code, but if you want for some reason setup that, you can run:
 ```bash
 export OMP_NUM_THREADS=<number of threads>
 ```
@@ -369,7 +369,7 @@ export OMP_NUM_THREADS=<number of threads>
 ```bash
 <eventually numactl for 64 threads> ./transpose <code_identifier> <mode> <size> <test_mode> <samples> <n° threads (not mandatory and ignored for mode from 1-3)>
 ```
-
+And example of numactl instruction that I've used is numactl --cpunodebind=0,1 --membind=0,1 for 64 threads.<br><br>
 Jump to [Code Overview](#code-overview)), to see a detailed description of each parameter.<br><br>
 
 [Back to top](#table-of-contents)
