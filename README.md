@@ -17,6 +17,7 @@
 - [Code Overview](#code-overview)
   - [Input Parameters](#input-parameters)
   - [Flow of the program](#flow-of-the-program)
+  - [Performances theorical peak (Optional Task](#performances-theorical-peak)
 - [Contact](#contact)
   
 ---
@@ -523,6 +524,83 @@ The generation of the same values obviously doing simulations will logically be 
 4. After the simulations are all done, the array in which the times are saved is reorder with a bubblesort algorithm<br>
 5. Then, is took from that reordered array the 40% in the middle and from it is computed the average time and if was done the sequential code with the size and the test mode equal to this simulation, are computed the scaling and the efficiency, too. The obtained resultes are saved in simulation summary files for each mode and general ones, which are different from the one with each single times.
 6. Now, the program is ended an ready to get other data as input.
+<br><br>
+[Back to top](#table-of-contents)
+
+---
+
+## Performances theorical Peak (Optional Task)
+Because of the lack of space on the four report page, I preferred to write the tasks to do in a good and comprehensive way, so this bonus task, I've decided to put it in the ReadME. Considering the architecture of 96 CPU, to calculate the memory bandwidth, we have to consider the following formula:
+$$Memory Bandwidth = \frac{Frequency (GHz) * Memory Bus Width (bytes) * Data Rate}$$
+Considering the information provided above, here there is what we need:
+• Base frequency 2,3 GHz
+• Bus width 64 bit -> 8 bytes
+• 6 memory channels per socket, with 4 sockets, the data rate will be 24 times for fast
+$$Memory Bandwidth=2,3*8*24=441,6 \frac{Gb}{s}$$
+Considering for example the sequential code, it will be run on only one CPU, so the memory bandwidth per CPU is $`\441,6/96=4,6 \frac{Gb}{s}`$. If we are using more threads it will become 4,6*n° threads. From this, we know from the report that my transposition algorithm have $`2N^2`$ operations, all with floats, so the memory to be transfer will be $`8N^2`$. From this we can estimate the times theoretically doing the memory to be transfer/the memory bandwidth per CPU used. With this data here there is the relation between theoretical and sequential time:
+<table>
+        <tr>
+            <th>Size<th>
+            <th>Sequential (s)</th>
+            <th>Theoretical Time (s)</th>
+            <th>Math Relation</th>
+        </tr>
+        <tr>
+          <th>16</th>
+          <th>0,00000097</th>
+          <th>0,00000045</th>
+          <th>46,1%</th>
+        </tr>
+         <tr>
+          <th>32</th>
+          <th>0,00000325</th>
+          <th>0,00000178</th>
+          <th>54,8%</th>
+        </tr>
+         <tr>
+          <th>64</th>
+          <th>0,00001085</th>
+          <th>0,00000712</th>
+          <th>65,7%</th>
+        </tr>
+         <tr>
+          <th>128</th>
+          <th>0,00004752</th>
+          <th>0,00002849</th>
+          <th>60%</th>
+        </tr>
+        <tr>
+          <th>256</th>
+          <th>0,00021899</th>
+          <th>0,00011398</th>
+          <th>52%</th>
+        </tr>
+         <tr>
+           <th>512</th>
+            <th>0,00066400</th>
+            <th>0,000455903</th>
+            <th>68,5%</th>
+          </tr>
+         <tr>
+           <th>1024</th>
+            <th>0,00306322</th>
+            <th>0,00182361</th>
+            <th>59,5%</th>
+          </tr>
+          <tr>
+           <th>2048</th>
+            <th>0,02530560</th>
+            <th>0,00729444</th>
+            <th>28,8%</th>
+          </tr>
+         <tr>
+           <th>4096</th>
+            <th>0,12131174</th>
+            <th>0,029177767</th>
+            <th>24,1%</th>
+          </tr>
+</table>
+All the calculus and the tables can be found in Definitive Results, first table for 96 CPUs. Here below, there is the graph of the relation and is seeable that the values are mostly in the range as expected, because effective bandwidth is typically between 50% and 70% respect from the theoretical one and in the time logic the relation is the same.
 <br><br>
 [Back to top](#table-of-contents)
 
