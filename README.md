@@ -49,8 +49,9 @@ Matteo Gottardelli Project
  ┃ ┗ functions.c                # Definitions in functions.h
  ┣ All Simulations              # All past simulations, data and file Excel
  ┃ ┗ ...
- ┣ Definitive Simulation        # Simulation to take as reference for report and the project
- ┃ ┣ results                    # Folder with all .csv files
+ ┣ Final Results                # Simulation to take as reference for report and the project
+ ┃ ┣ Definitive_1               # Folders with all .csv files
+ ┃ ┣ ...                  
  ┃ ┗ analysis.xlsx              # File excel summarizing the collected data
  ┣ Matteo_Gottardelli_237749_Report.pdf # Report
  ┗ Latex source                 # Folder with Original files from which the pdf was generated
