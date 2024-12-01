@@ -601,14 +601,13 @@ Considering for example the sequential code, it will be run on only one CPU, so 
             <th>24,1%</th>
           </tr>
 </table>
-All the calculus and the tables can be found in Definitive Results, first table for 96 CPUs. Here below, there is the graph of the relation and is seeable that the values are mostly in the range as expected, because effective bandwidth is typically between 50% and 70% respect from the theoretical one and in the time logic the relation is the same.<br><br>
+All the calculus and the tables can be found in Definitive Results, first table for 96 CPUs. Here below, there is the graph of the relation and is seeable that the values are mostly in the range as expected, because effective bandwidth is typically between 50% and 70% respect from the theoretical one and in the time logic the relation is the same. The downgrade in the last two sizes is caused by the bootlenecks told in the report, leading to collisions, when transfering large amounts of bytes.<br><br>
 <div align="center">
   <p>
       <img width="100%" src="Latex_Source/images/Image 1.06.png">
   </p>
 </div>
 <br><br>
-
 [Back to top](#table-of-contents)
 
 ---
