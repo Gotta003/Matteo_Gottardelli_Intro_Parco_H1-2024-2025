@@ -537,7 +537,7 @@ Considering the information provided above, here there is what we need:
 • Bus width 64 bit -> 8 bytes
 • 6 memory channels per socket, with 4 sockets, the data rate will be 24 times for fast
 $$Memory Bandwidth=2,3*8*24=441,6 \frac{Gb}{s}$$
-Considering for example the sequential code, it will be run on only one CPU, so the memory bandwidth per CPU is $`\441,6/96=4,6 \frac{Gb}{s}`$. If we are using more threads it will become 4,6*n° threads. From this, we know from the report that my transposition algorithm have $`2N^2`$ operations, all with floats, so the memory to be transfer will be $`8N^2`$. From this we can estimate the times theoretically doing the memory to be transfer/the memory bandwidth per CPU used. With this data here there is the relation between theoretical and sequential time:
+Considering for example the sequential code, it will be run on only one CPU, so the memory bandwidth per CPU is $`441,6/96=4,6 \frac{Gb}{s}`$. If we are using more threads it will become 4,6*n° threads. From this, we know from the report that my transposition algorithm have $`2N^2`$ operations, all with floats, so the memory to be transfer will be $`8N^2`$. From this we can estimate the times theoretically doing the memory to be transfer/the memory bandwidth per CPU used. With this data here there is the relation between theoretical and sequential time:
 <table>
         <tr>
             <th>Size<th>
@@ -601,6 +601,11 @@ Considering for example the sequential code, it will be run on only one CPU, so 
           </tr>
 </table>
 All the calculus and the tables can be found in Definitive Results, first table for 96 CPUs. Here below, there is the graph of the relation and is seeable that the values are mostly in the range as expected, because effective bandwidth is typically between 50% and 70% respect from the theoretical one and in the time logic the relation is the same.
+<div align="center>
+  <p>
+      <img width="100% src="Latex Source/images/Image 1.06.png"">
+  </p>
+</div>
 <br><br>
 [Back to top](#table-of-contents)
 
