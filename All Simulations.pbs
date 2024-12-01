@@ -1,0 +1,262 @@
+#!/bin/bash
+# Job name
+#PBS -N transpose
+# Output files
+#PBS -o ./transpose.o
+#PBS -e ./transpose.e
+# Queue name
+#PBS -q short_cpuQ
+# Set the maximum wall time
+#PBS -l walltime=1:00:00
+# Number of nodes, cpus, mpi processors and amount of memory
+#PBS -l select=1:ncpus=64:ompthreads=64:mem=1Gb
+# Modules for C
+module load gcc91
+gcc() {
+    gcc-9.1.0 "$@"
+}
+gcc --version
+module load numactl
+lscpu
+# Select the working directory
+cd /home/matteo.gottardelli/Project
+# Functions
+function execution {
+    for size in {4..12}; do
+        case $2 in 
+            1|2|3)       
+                ./transpose $1 $2 $size $3 $4
+            ;;
+            4|5|6|7)
+                for threads in 1 2 4 8 16 32 64; do
+                    export OMP_NUM_THREADS=$threads
+                    #export OMP_STACKSIZE=$((512/threads))M
+                    if [ $threads -eq 64 ]; then
+                        numactl --cpunodebind=0,1 --membind=0,1 ./transpose $1 $2 $size $3 $4 $OMP_NUM_THREADS
+                    else
+                        ./transpose $1 $2 $size $3 $4 $OMP_NUM_THREADS
+                    fi
+                done
+            ;;
+        esac
+    done
+}
+function mode1 {
+    gcc -O0 functions.c transpose.c -o transpose -fopenmp -lm
+    execution SO0 $1 $2 $3
+}
+function mode2 {
+    for i in {1..10}; do 
+        case $i in
+            1)
+                gcc -O2 functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2 $1 $2 $3
+            ;;
+            2)
+                gcc -O2 -march=native functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2M $1 $2 $3
+            ;;
+            3)
+                gcc -O2  -ftree-vectorize functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2FTV $1 $2 $3
+            ;;
+            4)
+                gcc -O2 -funroll-loops functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2FUN $1 $2 $3
+            ;;
+            5)
+                gcc -O2 -fprefetch-loop-arrays functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2PLA $1 $2 $3
+            ;;
+            6)
+                gcc -O2 -ftree-vectorize -funroll-loops functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2FTVFUN $1 $2 $3
+            ;;
+            7)
+                gcc -O2 -ffast-math functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2FM $1 $2 $3
+            ;;
+            8)
+                gcc -O2 -flto functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2FL $1 $2 $3
+            ;;
+            9)
+                gcc -O2 -falign-loops=16 functions.c transpose.c -o transpose -fopenmp -lm
+                execution I2FA $1 $2 $3
+            ;;
+            10)
+                 gcc -O2 -march=native -funroll-loops -fprefetch-loop-arrays -ftree-vectorize -ffast-math -flto -falign-loops=128 functions.c transpose.c -o transpose -fopenmp -lm
+                 execution I2DEF $1 $2 $3
+            ;;
+        esac 
+    done
+}
+function mode3 {
+    for i in {1..10}; do 
+        case $i in
+            1)
+                gcc -O2 functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2 $1 $2 $3
+            ;;
+            2)
+                gcc -O2 -march=native functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2M $1 $2 $3
+            ;;
+            3)
+                gcc -O2  -ftree-vectorize functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2FTV $1 $2 $3
+            ;;
+            4)
+                gcc -O2 -funroll-loops functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2FUN $1 $2 $3
+            ;;
+            5)
+                gcc -O2 -fprefetch-loop-arrays functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2PLA $1 $2 $3
+            ;;
+            6)
+                gcc -O2 -ftree-vectorize -funroll-loops functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2FTVFUN $1 $2 $3
+            ;;
+            7)
+                gcc -O2 -ffast-math functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2FM $1 $2 $3
+            ;;
+            8)
+                gcc -O2 -flto functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2FL $1 $2 $3
+            ;;
+            9)
+                gcc -O2 -falign-loops=16 functions.c transpose.c -o transpose -fopenmp -lm
+                execution R2FA $1 $2 $3
+            ;;
+            10)
+                 gcc -O2 -march=native -funroll-loops -fprefetch-loop-arrays -ftree-vectorize -ffast-math -flto -falign-loops=128 functions.c transpose.c -o transpose -fopenmp -lm
+                 execution R2DEF $1 $2 $3
+            ;;
+        esac 
+    done
+}
+function mode4 {
+    gcc -O2 -march=native functions.c transpose.c -o transpose -fopenmp -fopenmp-simd -lm
+    export OMP_DYNAMIC=FALSE
+    export OMP_SCHEDULE=STATIC
+    export OMP_PROC_BIND=spread
+    export OMP_PLACES=cores
+    #export OMP_STACKSIZE=128M
+    export OMP_WAIT_POLICY=ACTIVE
+    export OMP_NESTED=TRUE
+    export OMP_CANCELLATION=TRUE
+    execution OMPLOCWS $1 $2 $3
+}
+function mode5 {
+    gcc -O2 -march=native functions.c transpose.c -o transpose -fopenmp -fopenmp-simd -lm
+    export OMP_DYNAMIC=FALSE
+    export OMP_SCHEDULE=STATIC
+    export OMP_PROC_BIND=spread
+    export OMP_PLACES=cores
+    #export OMP_STACKSIZE=128M
+    export OMP_WAIT_POLICY=ACTIVE
+    export OMP_NESTED=TRUE
+    export OMP_CANCELLATION=TRUE
+    execution OMPGLBWS $1 $2 $3
+}
+function mode6 {
+    gcc -O2 -march=native -ffast-math -funroll-loops functions.c transpose.c -o transpose -fopenmp -fopenmp-simd -lm
+    export OMP_DYNAMIC=FALSE
+    export OMP_SCHEDULE=STATIC
+    export OMP_PROC_BIND=spread
+    export OMP_PLACES=cores
+    #export OMP_STACKSIZE=128M
+    export OMP_WAIT_POLICY=ACTIVE
+    export OMP_NESTED=TRUE
+    export OMP_CANCELLATION=TRUE
+    execution OMPLOCBB $1 $2 $3
+}
+function mode7 {
+    gcc -O2 -march=native -ffast-math -funroll-loops functions.c transpose.c -o transpose -fopenmp -fopenmp-simd -lm
+    export OMP_DYNAMIC=FALSE
+    export OMP_SCHEDULE=STATIC
+    export OMP_PROC_BIND=spread #required because the system has 4 sockets and in each 24, if not spread it will saturate and won't work for 32 and 64
+    export OMP_PLACES=cores
+    #export OMP_STACKSIZE=128M
+    export OMP_WAIT_POLICY=ACTIVE
+    export OMP_NESTED=TRUE
+    export OMP_CANCELLATION=TRUE
+    execution OMPGLBBB $1 $2 $3
+}
+#function mode8 {
+#    gcc -O3 -march=native functions.c transpose.c -o transpose -fopenmp -lm
+#    export OMP_DYNAMIC=TRUE
+#    export OMP_PROC_BIND=TRUE
+#    export OMP_PLACES=cores
+#    export OMP_STACKSIZE=128M
+#    export OMP_WAIT_POLICY=ACTIVE
+#    export OMP_NESTED=TRUE
+#    export OMP_CANCELLATION=TRUE
+#    execution OMPLOCTB $1 $2 $3
+#}
+#function mode9 {
+#    gcc -O3 -march=native functions.c transpose.c -o transpose -fopenmp -lm
+#    export OMP_DYNAMIC=TRUE
+#    export OMP_SCHEDULE=STATIC
+#    export OMP_PROC_BIND=TRUE
+#    export OMP_PLACES=cores
+#    export OMP_STACKSIZE=128M
+#    export OMP_WAIT_POLICY=ACTIVE
+#    export OMP_NESTED=TRUE
+#    export OMP_CANCELLATION=TRUE
+#    execution OMPGLBTB $1 $2 $3
+#}
+
+original="results"
+copy_dir="$original"
+n=1
+while [[ -d $copy_dir ]]; do
+    copy_dir="${original}_$n"
+    ((n++))
+done
+mkdir -p $copy_dir
+samples=25 
+export OMP_NUM_THREADS
+for test in {1..3}; do #Mode 0 is only for casual numbers, user usage (not for simulation)
+    for mode in {1..7}; do 
+    # The code should be compiled before submitting the job
+        case $mode in
+            1)
+                mode1 $mode $test $samples
+            ;;
+            2)
+                mode2 $mode $test $samples
+            ;;
+            3)
+                mode3 $mode $test $samples
+            ;;
+            4)
+                mode4 $mode $test $samples
+            ;;
+            5)
+                mode5 $mode $test $samples
+            ;;
+            6)
+                mode6 $mode $test $samples
+            ;;
+            7)
+                mode7 $mode $test $samples
+            ;;
+        esac
+        #run code
+         #8)
+        #    mode8 $mode $test $samples
+        #;;
+        #9)
+        #    mode9 $mode $test $samples
+        #;;
+    done
+done
+unset OMP_NUM_THREADS
+mv results*.csv $copy_dir
+mv times*.csv $copy_dir
+# mv transpose.o $copy_dir 
+# mv transpose.e $copy_dir
+exit
