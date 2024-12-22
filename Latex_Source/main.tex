@@ -53,42 +53,24 @@
     \IEEEauthorblockN{Matteo Gottardelli 237749}
     \IEEEauthorblockA{\textit{Computer, Communication, and Electronics Engineering}\\
     University of Trento, Italy\\
-    Email: matteo.gottardelli@studenti.unitn.it}
+    Email: matteo.gottardelli@studenti.unitn.it\\
+    \href{https://github.com/Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025/tree/main/Matrix_Transposition}{Github Link}}
 }
-
 \maketitle
 \begin{abstract}
 This study explores methods for transposing an N$\times$N matrix, focusing on parallelization of a sequential code involving a symmetry check followed by transposition if needed.
 Parallelization was achieved using both implicit parallelism (block-based and recursive strategies) and OpenMP (OMP).
-Performance was analyzed by comparing execution times, speedups, and efficiency for different methods, matrix sizes, and thread counts.
-Simulations were conducted on the University of Trento’s cluster, with nodes having 64 CPUs, 64 OMP threads, and 1 GB of memory.
-Results show that for implicit parallelism, the block-based approach slightly outperformed the recursive method, especially for larger matrices.
+The performance was analyzed by comparing execution times, speedups, and efficiency for different methods, matrix sizes, and thread counts.
+The results obtained show that for implicit parallelism, the block-based approach slightly outperformed the recursive method, especially for larger matrices.
 The OMP implementation exhibited overhead for small matrices (N$\leq 2^6$), but speedup improved significantly for larger sizes (N$\geq 2^{10}$), with efficiency peaking at 16 threads before bottlenecks appeared.
 \end{abstract}
 \input{report.tex}
+\newpage
 \printbibliography
 Link to the GitHub Page (Code):
 \href{https://github.com/Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025/tree/main/Matrix_Transposition}{Project Code}
 \newline Link to the GitHub Page (ReadME):
 \href{https://github.com/Gotta003/Matteo_Gottardelli_Intro_Parco_H1-2024-2025/blob/main/README.md}{Project ReadME}
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\columnwidth]{images/Image 1.02.png}
-    \caption{Comparison with Sequential (size-speedup)}
-    \label{fig:figure1}
-\end{figure}
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\columnwidth]{images/Image 1.03.png}
-    \caption{Speedup GLB-Block-Based (N° Threads-SpeedUp)}
-    \label{fig:figure2}
-\end{figure}
-\begin{figure}[!h]
-    \centering
-    \includegraphics[width=1\columnwidth]{images/Image 1.04.png}
-    \caption{Efficiency GLB-Block-Based (N° Threads-Efficiency\%)}
-    \label{fig:figure3}
-\end{figure}
 \if
 \fi
 \end{document}
